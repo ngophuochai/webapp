@@ -25,10 +25,6 @@
 
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
-
-		<script>
-			window
-		</script>
     </head>
 	<body>
 		<!-- HEADER -->
@@ -43,8 +39,8 @@
 					</ul>
 					<ul class="header-links pull-right">
 						<!-- <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li> -->
-						<li><a href="#"><i class="fa fa-user-o"></i> Đăng ký</a></li>
-						<li><a href="#"><i class="fa"></i> Đăng nhập</a></li>
+						<li><a href="./register.html"><i class="fa fa-user-o"></i> Đăng ký</a></li>
+						<li><a href="./login.html"><i class="fa"></i> Đăng nhập</a></li>
 					</ul>
 				</div>
 			</div>
@@ -69,7 +65,7 @@
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form>
+								<form action="./search.html" method="GET">
 									<select class="input-select">
 										<option value="0">Tất cả</option>
 										<option value="1">Tên</option>
@@ -78,48 +74,11 @@
 										<option value="1">Nhà sản xuất</option>
 									</select>
 									<input class="input" placeholder="Nhập từ khóa">
-									<input type="button" class="search-btn" value="Tìm kiếm" onclick="location.href='./store.html'" >
+									<input type="submit" class="search-btn" value="Tìm kiếm" >
 								</form>
 							</div>
 						</div>
 						<!-- /SEARCH BAR -->
-
-						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
-							<div class="header-ctn">
-								<!-- Cart -->
-								<div class="dropdown">
-									<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-										<i class="fa fa-shopping-cart"></i>
-										<span>Giỏ hàng</span>
-										<div class="qty">1</div>
-									</a>
-									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/Hyundai Elantra GLS.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
-													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-										</div>
-										<div class="cart-summary">
-											<h5>Tổng tiền: $980.00</h5>
-										</div>
-										<div class="cart-btns">
-											<a href="#">Xem giỏ hàng</a>
-											<a href="#">Thanh toán <i class="fa fa-arrow-circle-right"></i></a>
-										</div>
-									</div>
-								</div>
-								<!-- /Cart -->
-							</div>
-						</div>
-						<!-- /ACCOUNT -->
 					</div>
 					<!-- row -->
 				</div>
@@ -186,230 +145,211 @@
 					</div>
 					<!-- /section title -->
 
-					<!-- Products tab & slick -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab1" class="tab-pane active">
-									<div class="products-slick" data-nav="#slick-nav-1">
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Hyundai Elantra GLS.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Xe con</p>
-												<h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
-												<p class="product-category">Số lượt xem: 1000</p>
-												<p class="product-category">Số lượng bán: 100</p>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div>
-													<button type="button" class="btn btn-info">Xem chi tiết</button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Hyundai Elantra Limited.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Xe con</p>
-												<h3 class="product-name"><a href="#">Hyundai Elantra Limited</a></h3>
-												<p class="product-category">Số lượt xem: 1000</p>
-												<p class="product-category">Số lượng bán: 100</p>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div>
-													<button type="button" class="btn btn-info">Xem chi tiết</button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Hyundai Sonata Limited 2.0T.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Xe con</p>
-												<h3 class="product-name"><a href="#">Hyundai Sonata Limited 2.0T</a></h3>
-												<p class="product-category">Số lượt xem: 1000</p>
-												<p class="product-category">Số lượng bán: 100</p>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div>
-													<button type="button" class="btn btn-info">Xem chi tiết</button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Hyundai Tucson Limited.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Xe con</p>
-												<h3 class="product-name"><a href="#">Hyundai Tucson Limited</a></h3>
-												<p class="product-category">Số lượt xem: 1000</p>
-												<p class="product-category">Số lượng bán: 100</p>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div>
-													<button type="button" class="btn btn-info">Xem chi tiết</button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Hyundai Veloster Base.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Xe con</p>
-												<h3 class="product-name"><a href="#">Hyundai Veloster Base</a></h3>
-												<p class="product-category">Số lượt xem: 1000</p>
-												<p class="product-category">Số lượng bán: 100</p>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div>
-													<button type="button" class="btn btn-info">Xem chi tiết</button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Lexus CT 200h Base.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Xe con</p>
-												<h3 class="product-name"><a href="#">Lexus CT 200h Base</a></h3>
-												<p class="product-category">Số lượt xem: 1000</p>
-												<p class="product-category">Số lượng bán: 100</p>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div>
-													<button type="button" class="btn btn-info">Xem chi tiết</button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Lexus ES 330.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Xe con</p>
-												<h3 class="product-name"><a href="#">Lexus ES 330</a></h3>
-												<p class="product-category">Số lượt xem: 1000</p>
-												<p class="product-category">Số lượng bán: 100</p>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div>
-													<button type="button" class="btn btn-info">Xem chi tiết</button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Lexus IS 250 Base.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Xe con</p>
-												<h3 class="product-name"><a href="#">Lexus IS 250 Base</a></h3>
-												<p class="product-category">Số lượt xem: 1000</p>
-												<p class="product-category">Số lượng bán: 100</p>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div>
-													<button type="button" class="btn btn-info">Xem chi tiết</button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Lexus IS-F Base.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Xe con</p>
-												<h3 class="product-name"><a href="#">Lexus IS-F Base</a></h3>
-												<p class="product-category">Số lượt xem: 1000</p>
-												<p class="product-category">Số lượng bán: 100</p>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div>
-													<button type="button" class="btn btn-info">Xem chi tiết</button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Lexus LC 500.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<p class="product-category">Xe con</p>
-												<h3 class="product-name"><a href="#">Lexus LC 500</a></h3>
-												<p class="product-category">Số lượt xem: 1000</p>
-												<p class="product-category">Số lượng bán: 100</p>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-												<div>
-													<button type="button" class="btn btn-info">Xem chi tiết</button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-											</div>
-										</div>
-										<!-- /product -->
-									</div>
-									<div id="slick-nav-1" class="products-slick-nav"></div>
+					<div class="row">
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Hyundai Elantra GLS.jpg" alt="">
 								</div>
-								<!-- /tab -->
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
 							</div>
 						</div>
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Hyundai Elantra Limited.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Hyundai Elantra Limited</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Hyundai Sonata Limited 2.0T.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Hyundai Sonata Limited 2.0T</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Hyundai Tucson Limited.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Hyundai Tucson Limited</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Hyundai Veloster Base.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Hyundai Veloster Base</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Lexus CT 200h Base.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Lexus CT 200h Base</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Lexus ES 330.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Lexus ES 330</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Lexus IS 250 Base.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Lexus IS 250 Base</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+						
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Lexus IS-F Base.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Lexus IS-F Base</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Lexus LC 500.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Lexus LC 500</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
 					</div>
-					<!-- Products tab & slick -->
 				</div>
 				<!-- /row -->
 			</div>
@@ -423,7 +363,6 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-
 					<!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
@@ -432,229 +371,212 @@
 					</div>
 					<!-- /section title -->
 
-					<!-- Products tab & slick -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab2" class="tab-pane fade in active">
-									<div class="products-slick" data-nav="#slick-nav-2">
-										<!-- product -->
-										<div class="product">
-												<div class="product-img">
-													<img src="./img/Toyota 4Runner TRD Pro.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Xe con</p>
-													<h3 class="product-name"><a href="#">Toyota 4Runner TRD Pro.jpg</a></h3>
-													<p class="product-category">Số lượt xem: 1000</p>
-													<p class="product-category">Số lượng bán: 100</p>
-													<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-													<div>
-														<button type="button" class="btn btn-info">Xem chi tiết</button>
-													</div>
-												</div>
-												<div class="add-to-cart">
-													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-												</div>
-											</div>
-											<!-- /product -->
-	
-											<!-- product -->
-											<div class="product">
-												<div class="product-img">
-													<img src="./img/Toyota Camry CE.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Xe con</p>
-													<h3 class="product-name"><a href="#">Toyota Camry CE.jpg</a></h3>
-													<p class="product-category">Số lượt xem: 1000</p>
-													<p class="product-category">Số lượng bán: 100</p>
-													<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-													<div>
-														<button type="button" class="btn btn-info">Xem chi tiết</button>
-													</div>
-												</div>
-												<div class="add-to-cart">
-													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-												</div>
-											</div>
-											<!-- /product -->
-	
-											<!-- product -->
-											<div class="product">
-												<div class="product-img">
-													<img src="./img/Toyota Camry LE.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Xe con</p>
-													<h3 class="product-name"><a href="#">Toyota Camry LE.jpg</a></h3>
-													<p class="product-category">Số lượt xem: 1000</p>
-													<p class="product-category">Số lượng bán: 100</p>
-													<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-													<div>
-														<button type="button" class="btn btn-info">Xem chi tiết</button>
-													</div>
-												</div>
-												<div class="add-to-cart">
-													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-												</div>
-											</div>
-											<!-- /product -->
-	
-											<!-- product -->
-											<div class="product">
-												<div class="product-img">
-													<img src="./img/Toyota Celica ST.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Xe con</p>
-													<h3 class="product-name"><a href="#">Toyota Celica ST.jpg</a></h3>
-													<p class="product-category">Số lượt xem: 1000</p>
-													<p class="product-category">Số lượng bán: 100</p>
-													<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-													<div>
-														<button type="button" class="btn btn-info">Xem chi tiết</button>
-													</div>
-												</div>
-												<div class="add-to-cart">
-													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-												</div>
-											</div>
-											<!-- /product -->
-	
-											<!-- product -->
-											<div class="product">
-												<div class="product-img">
-													<img src="./img/Toyota Highlander Limited.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Xe con</p>
-													<h3 class="product-name"><a href="#">Toyota Highlander Limited.jpg</a></h3>
-													<p class="product-category">Số lượt xem: 1000</p>
-													<p class="product-category">Số lượng bán: 100</p>
-													<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-													<div>
-														<button type="button" class="btn btn-info">Xem chi tiết</button>
-													</div>
-												</div>
-												<div class="add-to-cart">
-													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-												</div>
-											</div>
-											<!-- /product -->
-	
-											<!-- product -->
-											<div class="product">
-												<div class="product-img">
-													<img src="./img/Lexus CT 200h Base.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Xe con</p>
-													<h3 class="product-name"><a href="#">Lexus CT 200h Base</a></h3>
-													<p class="product-category">Số lượt xem: 1000</p>
-													<p class="product-category">Số lượng bán: 100</p>
-													<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-													<div>
-														<button type="button" class="btn btn-info">Xem chi tiết</button>
-													</div>
-												</div>
-												<div class="add-to-cart">
-													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-												</div>
-											</div>
-											<!-- /product -->
-	
-											<!-- product -->
-											<div class="product">
-												<div class="product-img">
-													<img src="./img/Lexus ES 330.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Xe con</p>
-													<h3 class="product-name"><a href="#">Lexus ES 330</a></h3>
-													<p class="product-category">Số lượt xem: 1000</p>
-													<p class="product-category">Số lượng bán: 100</p>
-													<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-													<div>
-														<button type="button" class="btn btn-info">Xem chi tiết</button>
-													</div>
-												</div>
-												<div class="add-to-cart">
-													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-												</div>
-											</div>
-											<!-- /product -->
-	
-											<!-- product -->
-											<div class="product">
-												<div class="product-img">
-													<img src="./img/Lexus IS 250 Base.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Xe con</p>
-													<h3 class="product-name"><a href="#">Lexus IS 250 Base</a></h3>
-													<p class="product-category">Số lượt xem: 1000</p>
-													<p class="product-category">Số lượng bán: 100</p>
-													<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-													<div>
-														<button type="button" class="btn btn-info">Xem chi tiết</button>
-													</div>
-												</div>
-												<div class="add-to-cart">
-													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-												</div>
-											</div>
-											<!-- /product -->
-	
-											<!-- product -->
-											<div class="product">
-												<div class="product-img">
-													<img src="./img/Lexus IS-F Base.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Xe con</p>
-													<h3 class="product-name"><a href="#">Lexus IS-F Base</a></h3>
-													<p class="product-category">Số lượt xem: 1000</p>
-													<p class="product-category">Số lượng bán: 100</p>
-													<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-													<div>
-														<button type="button" class="btn btn-info">Xem chi tiết</button>
-													</div>
-												</div>
-												<div class="add-to-cart">
-													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-												</div>
-											</div>
-											<!-- /product -->
-											<!-- product -->
-											<div class="product">
-												<div class="product-img">
-													<img src="./img/Lexus LC 500.jpg" alt="">
-												</div>
-												<div class="product-body">
-													<p class="product-category">Xe con</p>
-													<h3 class="product-name"><a href="#">Lexus LC 500</a></h3>
-													<p class="product-category">Số lượt xem: 1000</p>
-													<p class="product-category">Số lượng bán: 100</p>
-													<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-													<div>
-														<button type="button" class="btn btn-info">Xem chi tiết</button>
-													</div>
-												</div>
-												<div class="add-to-cart">
-													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
-												</div>
-											</div>
-											<!-- /product -->
-									</div>
-									<div id="slick-nav-2" class="products-slick-nav"></div>
+					<div class="row">
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Lexus CT 200h Base.jpg" alt="">
 								</div>
-								<!-- /tab -->
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Lexus CT 200h Base</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
 							</div>
 						</div>
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Lexus ES 330.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Lexus ES 330</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Lexus IS 250 Base.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Lexus IS 250 Base</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Lexus IS-F Base.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Lexus IS-F Base</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Lexus LC 500.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Lexus LC 500</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Toyota 4Runner TRD Pro.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Toyota 4Runner TRD Pro</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Toyota Camry CE.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Toyota Camry CE</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Toyota Camry LE.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Toyota Camry LE</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Toyota Celica ST.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Toyota Celica ST</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Toyota Highlander Limited.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Toyota Highlander Limited</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
 					</div>
-					<!-- /Products tab & slick -->
 				</div>
 				<!-- /row -->
 			</div>
@@ -664,248 +586,234 @@
 
 		<!-- SECTION -->
 		<div class="section">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-	
-						<!-- section title -->
-						<div class="col-md-12">
-							<div class="section-title">
-								<h3 class="title">Sản phẩm xem nhiều nhất</h3>
-							</div>
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">Sản phẩm được xem nhiều nhất</h3>
 						</div>
-						<!-- /section title -->
-	
-						<!-- Products tab & slick -->
-						<div class="col-md-12">
-							<div class="row">
-								<div class="products-tabs">
-									<!-- tab -->
-									<div id="tab2" class="tab-pane fade in active">
-										<div class="products-slick" data-nav="#slick-nav-3">
-											<!-- product -->
-											<div class="product">
-													<div class="product-img">
-														<img src="./img/Lexus CT 200h Base.jpg" alt="">
-													</div>
-													<div class="product-body">
-														<p class="product-category">Category</p>
-														<h3 class="product-name"><a href="#">Lexus CT 200h Base.jpg</a></h3>
-														<p class="product-category">Số lượt xem: 1000</p>
-														<p class="product-category">Số lượng bán: 100</p>
-														<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-														<div>
-															<button type="button" class="btn btn-info">Xem chi tiết</button>
-														</div>
-													</div>
-													<div class="add-to-cart">
-														<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-													</div>
-												</div>
-												<!-- /product -->
-		
-												<!-- product -->
-												<div class="product">
-													<div class="product-img">
-														<img src="./img/Lexus ES 330.jpg" alt="">
-													</div>
-													<div class="product-body">
-														<p class="product-category">Category</p>
-														<h3 class="product-name"><a href="#">Lexus ES 330.jpg</a></h3>
-														<p class="product-category">Số lượt xem: 1000</p>
-														<p class="product-category">Số lượng bán: 100</p>
-														<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-														<div>
-															<button type="button" class="btn btn-info">Xem chi tiết</button>
-														</div>
-													</div>
-													<div class="add-to-cart">
-														<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-													</div>
-												</div>
-												<!-- /product -->
-		
-												<!-- product -->
-												<div class="product">
-													<div class="product-img">
-														<img src="./img/Lexus IS 250 Base.jpg" alt="">
-													</div>
-													<div class="product-body">
-														<p class="product-category">Category</p>
-														<h3 class="product-name"><a href="#">Lexus IS 250 Base.jpg</a></h3>
-														<p class="product-category">Số lượt xem: 1000</p>
-														<p class="product-category">Số lượng bán: 100</p>
-														<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-														<div>
-															<button type="button" class="btn btn-info">Xem chi tiết</button>
-														</div>
-													</div>
-													<div class="add-to-cart">
-														<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-													</div>
-												</div>
-												<!-- /product -->
-		
-												<!-- product -->
-												<div class="product">
-													<div class="product-img">
-														<img src="./img/Lexus IS-F Base.jpg" alt="">
-													</div>
-													<div class="product-body">
-														<p class="product-category">Category</p>
-														<h3 class="product-name"><a href="#">Lexus IS-F Base.jpg</a></h3>
-														<p class="product-category">Số lượt xem: 1000</p>
-														<p class="product-category">Số lượng bán: 100</p>
-														<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-														<div>
-															<button type="button" class="btn btn-info">Xem chi tiết</button>
-														</div>
-													</div>
-													<div class="add-to-cart">
-														<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-													</div>
-												</div>
-												<!-- /product -->
-		
-												<!-- product -->
-												<div class="product">
-													<div class="product-img">
-														<img src="./img/Lexus LC 500.jpg" alt="">
-													</div>
-													<div class="product-body">
-														<p class="product-category">Category</p>
-														<h3 class="product-name"><a href="#">Lexus LC 500.jpg</a></h3>
-														<p class="product-category">Số lượt xem: 1000</p>
-														<p class="product-category">Số lượng bán: 100</p>
-														<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-														<div>
-															<button type="button" class="btn btn-info">Xem chi tiết</button>
-														</div>
-													</div>
-													<div class="add-to-cart">
-														<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-													</div>
-												</div>
-												<!-- /product -->
-		
-												<!-- product -->
-												<div class="product">
-													<div class="product-img">
-														<img src="./img/Hyundai Elantra GLS.jpg" alt="">
-													</div>
-													<div class="product-body">
-														<p class="product-category">Category</p>
-														<h3 class="product-name"><a href="#">Hyundai Elantra GLS.jpg</a></h3>
-														<p class="product-category">Số lượt xem: 1000</p>
-														<p class="product-category">Số lượng bán: 100</p>
-														<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-														<div>
-															<button type="button" class="btn btn-info">Xem chi tiết</button>
-														</div>
-													</div>
-													<div class="add-to-cart">
-														<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-													</div>
-												</div>
-												<!-- /product -->
-		
-												<!-- product -->
-												<div class="product">
-													<div class="product-img">
-														<img src="./img/Hyundai Elantra Limited.jpg" alt="">
-													</div>
-													<div class="product-body">
-														<p class="product-category">Category</p>
-														<h3 class="product-name"><a href="#">Hyundai Elantra Limited.jpg</a></h3>
-														<p class="product-category">Số lượt xem: 1000</p>
-														<p class="product-category">Số lượng bán: 100</p>
-														<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-														<div>
-															<button type="button" class="btn btn-info">Xem chi tiết</button>
-														</div>
-													</div>
-													<div class="add-to-cart">
-														<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-													</div>
-												</div>
-												<!-- /product -->
-		
-												<!-- product -->
-												<div class="product">
-													<div class="product-img">
-														<img src="./img/Hyundai Sonata Limited 2.0T.jpg" alt="">
-													</div>
-													<div class="product-body">
-														<p class="product-category">Category</p>
-														<h3 class="product-name"><a href="#">Hyundai Sonata Limited 2.0T.jpg</a></h3>
-														<p class="product-category">Số lượt xem: 1000</p>
-														<p class="product-category">Số lượng bán: 100</p>
-														<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-														<div>
-															<button type="button" class="btn btn-info">Xem chi tiết</button>
-														</div>
-													</div>
-													<div class="add-to-cart">
-														<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-													</div>
-												</div>
-												<!-- /product -->
-		
-												<!-- product -->
-												<div class="product">
-													<div class="product-img">
-														<img src="./img/Hyundai Tucson Limited.jpg" alt="">
-													</div>
-													<div class="product-body">
-														<p class="product-category">Category</p>
-														<h3 class="product-name"><a href="#">Hyundai Tucson Limited.jpg</a></h3>
-														<p class="product-category">Số lượt xem: 1000</p>
-														<p class="product-category">Số lượng bán: 100</p>
-														<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-														<div>
-															<button type="button" class="btn btn-info">Xem chi tiết</button>
-														</div>
-													</div>
-													<div class="add-to-cart">
-														<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-													</div>
-												</div>
-												<!-- /product -->
-												<!-- product -->
-												<div class="product">
-													<div class="product-img">
-														<img src="./img/Hyundai Veloster Base.jpg" alt="">
-													</div>
-													<div class="product-body">
-														<p class="product-category">Category</p>
-														<h3 class="product-name"><a href="#">Hyundai Veloster Base.jpg</a></h3>
-														<p class="product-category">Số lượt xem: 1000</p>
-														<p class="product-category">Số lượng bán: 100</p>
-														<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-														<div>
-															<button type="button" class="btn btn-info">Xem chi tiết</button>
-														</div>
-													</div>
-													<div class="add-to-cart">
-														<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-													</div>
-												</div>
-												<!-- /product -->
-										</div>
-										<div id="slick-nav-3" class="products-slick-nav"></div>
+					</div>
+					<!-- /section title -->
+
+					<div class="row">
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Hyundai Elantra GLS.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
 									</div>
-									<!-- /tab -->
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
 								</div>
 							</div>
 						</div>
-						<!-- /Products tab & slick -->
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Toyota 4Runner TRD Pro.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Toyota 4Runner TRD Pro</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Toyota Camry CE.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Toyota Camry CE</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Toyota Camry LE.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Toyota Camry LE</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Toyota Celica ST.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Toyota Celica ST</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Hyundai Elantra GLS.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Hyundai Elantra Limited.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Hyundai Elantra Limited</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Hyundai Sonata Limited 2.0T.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Hyundai Sonata Limited 2.0T</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Hyundai Tucson Limited.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Hyundai Tucson Limited</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div style="height: 250px;" class="product-img">
+									<img src="./img/Hyundai Veloster Base.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<h3 class="product-name"><a href="#">Hyundai Veloster Base</a></h3>
+									<h4 class="product-price">$980.00</h4>
+									<div>
+										<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
 					</div>
-					<!-- /row -->
 				</div>
-				<!-- /container -->
+				<!-- /row -->
 			</div>
-			<!-- /SECTION -->
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section"></div>
+		<!-- /NEWSLETTER -->
 
 		<!-- FOOTER -->
 		<footer id="footer">
