@@ -55,12 +55,30 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="./" class="logo">
+								<a href="./index.html" class="logo">
 									<img src="../img/logo.png" alt="">
 								</a>
 							</div>	
 						</div>
 						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form action="./search.html" method="GET">
+									<select class="input-select">
+										<option value="0">Tất cả</option>
+										<option value="1">Tên</option>
+										<option value="1">Giá</option>
+										<option value="1">Loại</option>
+										<option value="1">Nhà sản xuất</option>
+									</select>
+									<input class="input" placeholder="Nhập từ khóa">
+									<input type="submit" class="search-btn" value="Tìm kiếm" >
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
 					</div>
 					<!-- row -->
 				</div>
@@ -78,8 +96,8 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="./">Dashboard</a></li>
-					</ul>
+                        <li><a href="./index.html">Dashboard</a></li>
+                    </ul>
 					<!-- /NAV -->
 				</div>
 				<!-- /responsive-nav -->
@@ -93,20 +111,53 @@
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
-				<div class="row">
-                    <div class="col-md-12">
-						<div class="section-title">
-							<h3 class="title">Dashboard</h3>
+				<div class="col-md-12">
+					<div class="section-title">
+						<h3 class="title">Sửa sản phẩm</h3>
+					</div>
+				</div>
+                <div class="row">
+					<!-- Product main img -->
+					<div class="col-md-5 col-md-push-2">
+						<div id="product-main-img">
+							<div class="product-preview">
+								<img src="../img/Hyundai Elantra GLS.jpg" alt="">
+							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
-                        <div class="list-group">
-                            <a href="./manageProduct.html" class="list-group-item">Quản lý sản phẩm</a>
-                            <a href="./manageType.html" class="list-group-item">Quản lý loại sản phẩm</a>
-                            <a href="./manageProducer.html" class="list-group-item">Quản lý nhà sản xuất</a>
-                            <a href="./manageOrder.html" class="list-group-item">Quản lý đơn hàng</a>
-                        </div>
+					<!-- /Product main img -->
+
+					<!-- Product thumb imgs -->
+					<div class="col-md-2  col-md-pull-5">
+						<div id="product-imgs">
+							<div class="product-preview">
+								<img src="../img/Hyundai Elantra GLS.jpg" alt="">
+							</div>
+						</div>
 					</div>
+					<!-- /Product thumb imgs -->
+
+					<div class="col-md-4 billing-details">
+                        <a href="./productEdit.html" class="btn btn-success">Thêm ảnh chính</a>
+                        <a href="./productEdit.html" class="btn btn-success">Thêm ảnh thu nhỏ</a>
+                        <br><br>                   
+                        <div class="form-group">
+                            <label>Mã sản phẩm:</label>
+                            <input class="input" type="text" value="MA123">
+                        </div>
+                        <div class="form-group">
+                            <label>Tên sản phẩm:</label>
+                            <input class="input" type="text" value="Hyundai Elantra GLS">
+                        </div>
+                        <div class="form-group">
+                            <label>Số lượng tồn:</label>
+                            <input class="input" type="text" value="100">
+                        </div>
+                        <div class="form-group">
+                            <label>Đơn giá:</label>
+                            <input class="input" type="text" value="$980.00">
+                        </div>
+                    </div>
 				</div>
 				<!-- /row -->
 			</div>
@@ -164,6 +215,5 @@
 		<script src="../js/nouislider.min.js"></script>
 		<script src="../js/jquery.zoom.min.js"></script>
 		<script src="../js/main.js"></script>
-
 	</body>
 </html>

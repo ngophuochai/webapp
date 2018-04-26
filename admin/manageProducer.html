@@ -55,7 +55,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="./" class="logo">
+								<a href="./index.html" class="logo">
 									<img src="../img/logo.png" alt="">
 								</a>
 							</div>	
@@ -78,8 +78,8 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="./">Dashboard</a></li>
-					</ul>
+                        <li><a href="./index.html">Dashboard</a></li>
+                    </ul>
 					<!-- /NAV -->
 				</div>
 				<!-- /responsive-nav -->
@@ -92,22 +92,53 @@
 		<div class="section">
 			<!-- container -->
 			<div class="container">
-				<!-- row -->
+                <!-- row -->
 				<div class="row">
                     <div class="col-md-12">
-						<div class="section-title">
-							<h3 class="title">Dashboard</h3>
-						</div>
-					</div>
-					<div class="col-md-6">
-                        <div class="list-group">
-                            <a href="./manageProduct.html" class="list-group-item">Quản lý sản phẩm</a>
-                            <a href="./manageType.html" class="list-group-item">Quản lý loại sản phẩm</a>
-                            <a href="./manageProducer.html" class="list-group-item">Quản lý nhà sản xuất</a>
-                            <a href="./manageOrder.html" class="list-group-item">Quản lý đơn hàng</a>
+                        <div class="section-title">
+                            <h3 class="title">Quản lý nhà sản xuất</h3>
                         </div>
-					</div>
-				</div>
+                    </div>
+
+                    <div class="col-md-6 header-search">
+                        <form action="./manageProduct.html" method="GET">
+                            <input class="input" placeholder="Nhập tên nhà sản xuất">
+                            <a href="#" class="btn btn-success">Thêm nhà sản xuất</a>
+                        </form>
+                    </div>
+                    <br><br>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="col-md-3">Nhà sản xuất</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input class="input" type="text" value="Hyundai"></td>
+                            <td><a href="#" class="btn btn-danger">Xóa</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input class="input" type="text" value="Lexus"></td>
+                            <td><a href="#" class="btn btn-danger">Xóa</a></td>
+                        </tr>
+                        <tr>
+                            <td><input class="input" type="text" value="Toyota"></td>
+                            <td><a href="#" class="btn btn-danger">Xóa</a></td>
+                        </tr>
+                        <tr>
+                            <td><input class="input" type="text" value="Mitsubishi"></td>
+                            <td><a href="#" class="btn btn-danger">Xóa</a></td>
+                        </tr>
+                        <tr>
+                            <td><input class="input" type="text" value="Suzuki"></td>
+                            <td><a href="#" class="btn btn-danger">Xóa</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <a href="#" class="btn btn-success">Cập nhật</a>
+                </div>
 				<!-- /row -->
 			</div>
 			<!-- /container -->
@@ -164,6 +195,5 @@
 		<script src="../js/nouislider.min.js"></script>
 		<script src="../js/jquery.zoom.min.js"></script>
 		<script src="../js/main.js"></script>
-
 	</body>
 </html>
