@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Sản phẩm</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="../css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="../css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="../css/style.css"/>
+
+    </head>
+	<body>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> 01656000130</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> ngophuochai1512138@gmail.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 231a/13 Dương Bá Trạc, P1, Q8, TP HCM</a></li>
+					</ul>
+					<ul class="header-links pull-right">
+						<!-- <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li> -->
+						<li><a href="./account.html"><i class="fa fa-user-o"></i> Ngô Phước Hải</a></li>
+						<li><a href="../"><i class="fa"></i> Đăng xuất</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="./" class="logo">
+									<img src="../img/logo.png" alt="">
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form>
+									<select class="input-select">
+										<option value="0">Tất cả</option>
+										<option value="1">Tên</option>
+										<option value="1">Giá</option>
+										<option value="1">Loại</option>
+										<option value="1">Nhà sản xuất</option>
+									</select>
+									<input class="input" placeholder="Nhập từ khóa">
+									<input type="button" class="search-btn" value="Tìm kiếm" onclick="location.href='./search.html'" >
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+
+						<!-- ACCOUNT -->
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								<!-- Cart -->
+								<div class="dropdown">
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Giỏ hàng</span>
+										<div class="qty">1</div>
+									</a>
+									<div class="cart-dropdown">
+										<div class="cart-list">
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="../img/Hyundai Elantra GLS.jpg" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
+													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+										</div>
+										<div class="cart-summary">
+											<h5>Tổng tiền: $980.00</h5>
+										</div>
+										<div class="cart-btns">
+											<a href="#">Xem giỏ hàng</a>
+											<a href="#">Thanh toán <i class="fa fa-arrow-circle-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<!-- /Cart -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li><a href="./">Trang chủ</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								Loại xe
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="./store.html">Xe con</a></li>
+								<li><a href="./store.html">Xe tải</a></li>
+								<li><a href="./store.html">Xe khách</a></li>
+								<li><a href="./store.html">Xe container</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								Hãng xe
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="./store.html">Hyundai</a></li>
+								<li><a href="./store.html">Lexus</a></li>
+								<li><a href="./store.html">Toyota</a></li>
+								<li><a href="./store.html">Mitsubishi</a></li>
+								<li><a href="./store.html">Suzuki</a></li>
+							</ul>
+						</li>
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		<!-- /NAVIGATION -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- ASIDE -->
+					<div id="aside" class="col-md-3">
+						<!-- aside Widget -->
+						<div class="aside">
+							<h3 class="aside-title">Loại xe</h3>
+							<div class="checkbox-filter">
+
+								<div class="input-checkbox">
+									<input type="checkbox" id="category-1" checked="checked">
+									<label for="category-1">
+										<span></span>
+										Xe con
+										<small>(120)</small>
+									</label>
+								</div>
+
+								<div class="input-checkbox">
+									<input type="checkbox" id="category-2">
+									<label for="category-2">
+										<span></span>
+										Xe tải
+										<small>(120)</small>
+									</label>
+								</div>
+
+								<div class="input-checkbox">
+									<input type="checkbox" id="category-3">
+									<label for="category-3">
+										<span></span>
+										Xe khách
+										<small>(120)</small>
+									</label>
+								</div>
+
+								<div class="input-checkbox">
+									<input type="checkbox" id="category-4">
+									<label for="category-4">
+										<span></span>
+										Xe container
+										<small>(120)</small>
+									</label>
+								</div>
+							</div>
+						</div>
+						<!-- /aside Widget -->
+
+						<!-- aside Widget -->
+						<div class="aside">
+							<h3 class="aside-title">Hãng xe</h3>
+							<div class="checkbox-filter">
+								<div class="input-checkbox">
+									<input type="checkbox" id="brand-1" checked="checked">
+									<label for="brand-1">
+										<span></span>
+										Hyundai
+										<small>(120)</small>
+									</label>
+								</div>
+								<div class="input-checkbox">
+									<input type="checkbox" id="brand-2">
+									<label for="brand-2">
+										<span></span>
+										Lexus
+										<small>(120)</small>
+									</label>
+								</div>
+								<div class="input-checkbox">
+									<input type="checkbox" id="brand-3">
+									<label for="brand-3">
+										<span></span>
+										Toyota
+										<small>(120)</small>
+									</label>
+								</div>
+								<div class="input-checkbox">
+									<input type="checkbox" id="brand-4">
+									<label for="brand-4">
+										<span></span>
+										Mitsubishi
+										<small>(120)</small>
+									</label>
+								</div>
+								<div class="input-checkbox">
+									<input type="checkbox" id="brand-5">
+									<label for="brand-5">
+										<span></span>
+										Suzuki
+										<small>(120)</small>
+									</label>
+								</div>
+							</div>
+						</div>
+						<!-- /aside Widget -->
+					</div>
+					<!-- /ASIDE -->
+
+					<!-- STORE -->
+					<div id="store" class="col-md-9">
+						<!-- store top filter -->
+						<div class="store-filter clearfix">
+							<div class="store-sort">
+								<label>
+									Sắp xếp theo:
+									<select class="input-select">
+										<option value="0">Mặc định</option>
+										<option value="1">Mới nhất</option>
+										<option value="1">Bán chạy nhất</option>
+										<option value="1">Xem nhiều nhất</option>
+									</select>
+								</label>
+							</div>
+						</div>
+						<!-- /store top filter -->
+
+						<!-- store products -->
+						<div class="row">
+							<!-- product -->
+							<div class="col-md-4 col-xs-6">
+								<div class="product">
+									<div style="height: 250px;" class="product-img">
+										<img src="../img/Hyundai Elantra GLS.jpg" alt="">
+									</div>
+									<div class="product-body">
+										<h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
+										<h4 class="product-price">$980.00</h4>
+										<div>
+											<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+										</div>
+									</div>
+									<div class="add-to-cart">
+										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+									</div>
+								</div>
+							</div>
+							<!-- /product -->
+
+							<!-- product -->
+							<div class="col-md-4 col-xs-6">
+								<div class="product">
+									<div style="height: 250px;" class="product-img">
+										<img src="../img/Hyundai Elantra Limited.jpg" alt="">
+									</div>
+									<div class="product-body">
+										<h3 class="product-name"><a href="#">Hyundai Elantra Limited</a></h3>
+										<h4 class="product-price">$980.00</h4>
+										<div>
+											<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+										</div>
+									</div>
+									<div class="add-to-cart">
+										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+									</div>
+								</div>
+							</div>
+							<!-- /product -->
+
+
+							<!-- product -->
+							<div class="col-md-4 col-xs-6">
+								<div class="product">
+									<div style="height: 250px;" class="product-img">
+										<img src="../img/Hyundai Sonata Limited 2.0T.jpg" alt="">
+									</div>
+									<div class="product-body">
+										<h3 class="product-name"><a href="#">Hyundai Sonata Limited2.0T</a></h3>
+										<h4 class="product-price">$980.00</h4>
+										<div>
+											<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+										</div>
+									</div>
+									<div class="add-to-cart">
+										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+									</div>
+								</div>
+							</div>
+							<!-- /product -->
+
+
+							<!-- product -->
+							<div class="col-md-4 col-xs-6">
+								<div class="product">
+									<div style="height: 250px;" class="product-img">
+										<img src="../img/Hyundai Tucson Limited.jpg" alt="">
+									</div>
+									<div class="product-body">
+										<h3 class="product-name"><a href="#">Hyundai Tucson Limited</a></h3>
+										<h4 class="product-price">$980.00</h4>
+										<div>
+											<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+										</div>
+									</div>
+									<div class="add-to-cart">
+										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+									</div>
+								</div>
+							</div>
+							<!-- /product -->
+
+
+							<!-- product -->
+							<div class="col-md-4 col-xs-6">
+								<div class="product">
+									<div style="height: 250px;" class="product-img">
+										<img src="../img/Hyundai Veloster Base.jpg" alt="">
+									</div>
+									<div class="product-body">
+										<h3 class="product-name"><a href="#">Hyundai Veloster Base</a></h3>
+										<h4 class="product-price">$980.00</h4>
+										<div>
+											<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+										</div>
+									</div>
+									<div class="add-to-cart">
+										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+									</div>
+								</div>
+							</div>
+							<!-- /product -->
+
+							<!-- product -->
+							<div class="col-md-4 col-xs-6">
+								<div class="product">
+									<div style="height: 250px;" class="product-img">
+										<img src="../img/Lexus CT 200h Base.jpg" alt="">
+									</div>
+									<div class="product-body">
+										<h3 class="product-name"><a href="#">Lexus CT 200h Base</a></h3>
+										<h4 class="product-price">$980.00</h4>
+										<div>
+											<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+										</div>
+									</div>
+									<div class="add-to-cart">
+										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+									</div>
+								</div>
+							</div>
+							<!-- /product -->
+
+
+							<!-- product -->
+							<div class="col-md-4 col-xs-6">
+								<div class="product">
+									<div style="height: 250px;" class="product-img">
+										<img src="../img/Lexus ES 330.jpg" alt="">
+									</div>
+									<div class="product-body">
+										<h3 class="product-name"><a href="#">Lexus ES 330</a></h3>
+										<h4 class="product-price">$980.00</h4>
+										<div>
+											<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+										</div>
+									</div>
+									<div class="add-to-cart">
+										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+									</div>
+								</div>
+							</div>
+							<!-- /product -->
+
+							<!-- product -->
+							<div class="col-md-4 col-xs-6">
+								<div class="product">
+									<div style="height: 250px;" class="product-img">
+										<img src="../img/Lexus IS 250 Base.jpg" alt="">
+									</div>
+									<div class="product-body">
+										<h3 class="product-name"><a href="#">Lexus IS 250 Base</a></h3>
+										<h4 class="product-price">$980.00</h4>
+										<div>
+											<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+										</div>
+									</div>
+									<div class="add-to-cart">
+										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+									</div>
+								</div>
+							</div>
+							<!-- /product -->
+
+
+							<!-- product -->
+							<div class="col-md-4 col-xs-6">
+								<div class="product">
+									<div style="height: 250px;" class="product-img">
+										<img src="../img/Lexus IS-F Base.jpg" alt="">
+									</div>
+									<div class="product-body">
+										<h3 class="product-name"><a href="#">Lexus IS-F Base</a></h3>
+										<h4 class="product-price">$980.00</h4>
+										<div>
+											<a href="./product.html" class="btn btn-info" role="button">Xem chi tiết</a>
+										</div>
+									</div>
+									<div class="add-to-cart">
+										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+									</div>
+								</div>
+							</div>
+							<!-- /product -->
+						</div>
+						<!-- /store products -->
+
+						<!-- store bottom filter -->
+						<div class="store-filter clearfix">
+							<ul class="store-pagination">
+								<li class="active">1</li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+							</ul>
+						</div>
+						<!-- /store bottom filter -->
+					</div>
+					<!-- /STORE -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<!-- top footer -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-6 col-xs-9">
+							<div class="footer">
+								<h3 class="footer-title">LIÊN HỆ</h3>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-map-marker"></i>231a/13 Dương Bá Trạc, P1, Q8, TP HCM</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>01656000130</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>ngophuochai1512138@gmail.com</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Thông tin</h3>
+								<ul class="footer-links">
+									<li><a href="#">Phiên bản 1.0.0</a></li>
+									<li><a href="#">Phát triển bởi Ngô Phước Hải</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /top footer -->
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/slick.min.js"></script>
+		<script src="../js/nouislider.min.js"></script>
+		<script src="../js/jquery.zoom.min.js"></script>
+		<script src="../js/main.js"></script>
+
+	</body>
+</html>
