@@ -55,7 +55,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="./" class="logo">
+								<a href="./index.html" class="logo">
 									<img src="../img/logo.png" alt="">
 								</a>
 							</div>	
@@ -141,7 +141,7 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li><a href="./">Trang chủ</a></li>
+						<li class="active"><a href="./index.html">Trang chủ</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 								Loại xe
@@ -174,36 +174,65 @@
 			</div>
 			<!-- /container -->
 		</nav>
-		<!-- /NAVIGATION -->
-
-		<!-- SECTION -->
+        <!-- /NAVIGATION -->
+        
+        <!-- SECTION -->
 		<div class="section">
 			<!-- container -->
 			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-4"></div>
-					<div class="col-md-4">
-						<div class="billing-details">
-							<div class="section-title text-center">
-								<h3 class="title">Thay đổi mật khẩu</h3>
-							</div><br>
-							<div class="form-group">
-								<label>Mật khẩu:</label>
-								<input class="input" type="password" placeholder="Mật khẩu">
-							</div>
-							<div class="form-group">
-								<label>Nhập lại mật khẩu:</label>
-								<input class="input" type="password" placeholder="Nhập lại mật khẩu">
-							</div><br>
-                            <div class="section-title text-center">
-								<a href="#" class="primary-btn order-submit">Cập nhật</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
+                <!-- row -->
+                <div class="row">
+                    <div class="section-title">
+                        <h3 class="title">Lịch sử đơn hàng</h3>
+                    </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="col-md-2">Mã đơn hàng</th>
+                            <th class="col-md-1">Hình ảnh</th>
+                            <th class="col-md-2">Tên xe</th>
+                            <th class="col-md-1">Số lượng</th>
+                            <th class="col-md-1">Tình trạng</th>
+                            <th class="col-md-2">Tổng tiền</th>
+                            <th class="col-md-2">Ngày tạo</th>
+                            <th class="col-md-1"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>MA1512</td>
+                            <td>
+                                <div class="product-img">
+                                    <img style="width: 100px;" src="../img/Hyundai Elantra GLS.jpg" alt="">
+                                </div>
+                            </td>
+                            <td>Hyundai Elantra GLS</td>
+                            <td>1</td>
+                            <td>Đã giao</td>
+                            <td>$980.00</td>
+                            <td>26/04/2018</td>
+                            <td> <a href="./infohis.html" class="btn btn-success">Chi tiết</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>MA138</td>
+                            <td>
+                                <div class="product-img">
+                                    <img style="width: 100px;" src="../img/Hyundai Elantra Limited.jpg" alt="">
+                                </div>
+                            </td>
+                            <td>Hyundai Elantra Limited</td>
+                            <td>3</td>
+                            <td>Đang giao</td>
+                            <td>$2940.00</td>
+                            <td>15/04/2018</td>
+                            <td> <a href="./infohis.html" class="btn btn-success">Chi tiết</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /row -->
+            </div>
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
@@ -258,6 +287,5 @@
 		<script src="../js/nouislider.min.js"></script>
 		<script src="../js/jquery.zoom.min.js"></script>
 		<script src="../js/main.js"></script>
-
 	</body>
 </html>

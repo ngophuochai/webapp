@@ -145,15 +145,26 @@
 							</div><br>
 							<div class="form-group">
 								<label>Email:</label>
-								<input class="input" type="text" placeholder="Địa chỉ email">
+								<input id="DCEmail" class="input" type="text" placeholder="Địa chỉ email">
 							</div>
 							<div class="form-group">
 								<label>Mật khẩu:</label>
-								<input class="input" type="email" placeholder="Mật khẩu">
+								<input class="input" type="password" placeholder="Mật khẩu">
 							</div><br>
 							<div class="section-title text-center">
-								<a href="./user/" class="primary-btn order-submit">Đăng nhập</a>
+								<!-- <a href="./user/" class="primary-btn order-submit">Đăng nhập</a> -->
+								<button class="primary-btn order-submit" onclick="toUser()">Đăng nhập</button>
 							</div>
+							<script>
+								var toUser = function toUser() {
+									if (document.getElementById("DCEmail").value === "user") 
+										window.location = "./user/";
+
+									if (document.getElementById("DCEmail").value === "admin") 
+										window.location = "./admin/";
+									return;
+								}
+							</script>
 						</div>
 					</div>
 				</div>

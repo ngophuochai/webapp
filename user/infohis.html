@@ -55,7 +55,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="./" class="logo">
+								<a href="./index.html" class="logo">
 									<img src="../img/logo.png" alt="">
 								</a>
 							</div>	
@@ -141,7 +141,7 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li><a href="./">Trang chủ</a></li>
+						<li class="active"><a href="./index.html">Trang chủ</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 								Loại xe
@@ -174,36 +174,73 @@
 			</div>
 			<!-- /container -->
 		</nav>
-		<!-- /NAVIGATION -->
-
-		<!-- SECTION -->
+        <!-- /NAVIGATION -->
+        
+        <!-- SECTION -->
 		<div class="section">
 			<!-- container -->
 			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-4"></div>
-					<div class="col-md-4">
-						<div class="billing-details">
-							<div class="section-title text-center">
-								<h3 class="title">Thay đổi mật khẩu</h3>
-							</div><br>
-							<div class="form-group">
-								<label>Mật khẩu:</label>
-								<input class="input" type="password" placeholder="Mật khẩu">
-							</div>
-							<div class="form-group">
-								<label>Nhập lại mật khẩu:</label>
-								<input class="input" type="password" placeholder="Nhập lại mật khẩu">
-							</div><br>
-                            <div class="section-title text-center">
-								<a href="#" class="primary-btn order-submit">Cập nhật</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
+                <!-- row -->
+                <div class="row">
+                    <!-- Billing Details -->
+                    <div class="billing-details">
+                        <div class="section-title">
+                            <h3 class="title">Thông tin đơn hàng</h3>
+                        </div>
+                        <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="col-md-2">Mã đơn hàng</th>
+                                    <th class="col-md-1">Hình ảnh</th>
+                                    <th class="col-md-2">Tên xe</th>
+                                    <th class="col-md-1">Số lượng</th>
+                                    <th class="col-md-1">Tình trạng</th>
+                                    <th class="col-md-1">Tổng tiền</th>
+                                    <th class="col-md-2">Ngày tạo</th>
+                                    <th class="col-md-2">Phí giao hàng</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>MA1512</td>
+                                    <td>
+                                        <div class="product-img">
+                                            <img style="width: 100px;" src="../img/Hyundai Elantra GLS.jpg" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Hyundai Elantra GLS</td>
+                                    <td>1</td>
+                                    <td>Đã giao</td>
+                                    <td>$980.00</td>
+                                    <td>26/04/2018</td>
+                                    <td>Miễn phí</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <label>Địa chỉ giao hàng:</label>
+                                <input class="input" type="text" value="231a/13 Dương Bá Trạc" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Tỉnh/ Thành phố:</label>
+                                <input class="input" type="text" value="TP Hồ Chí Minh" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Quận/ Huyện</label>
+                                <input class="input" type="text" value="Quận 8" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Phường/ Xã:</label>
+                                <input class="input" type="text" value="Phường 1" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Billing Details -->
+                </div>
+                <!-- /row -->
+            </div>
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
@@ -258,6 +295,5 @@
 		<script src="../js/nouislider.min.js"></script>
 		<script src="../js/jquery.zoom.min.js"></script>
 		<script src="../js/main.js"></script>
-
 	</body>
 </html>
