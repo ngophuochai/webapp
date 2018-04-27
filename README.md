@@ -25,3 +25,6 @@
     * Dashboard:
         - Hiện các chức năng: Quản lý sản phẩm, loại sản phẩm, nhà sản xuất, đơn hàng.
         - Khi click vào từng mục -> trang quản lý.
+
+# Link repository:
+https://github.com/ngophuochai/webapp
