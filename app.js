@@ -4,13 +4,17 @@ var exphbs_section = require('express-handlebars-sections');
 var bodyParser = require('body-parser');
 var path = require('path');
 
+var handleLayoutMDW = require('./middle-wares/handleLayout');
+
 var homeController = require('./controllers/homeController');
 var userController = require('./controllers/userController');
 var adminController = require('./controllers/adminController');
+var productController = require('./controllers/productController');
 
 var app = express();
 
 app.engine('hbs', exphbs({
+    defaultLayout: 'main',
     layoutsDir: 'views/_layouts/',
     helpers: {
         section: exphbs_section()
@@ -28,9 +32,16 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.use('/', homeController);
+app.use(handleLayoutMDW);
+
+app.get('/', (req, res) => {
+    res.redirect('/home');
+});
+
+app.use('/home', homeController);
 app.use('/user', userController);
 app.use('/admin', adminController);
+app.use('/product', productController);
 
 app.listen(3000, () => {
     console.log('server running on port 3000');
