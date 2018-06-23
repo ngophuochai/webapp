@@ -10,6 +10,8 @@ var homeController = require('./controllers/homeController');
 var userController = require('./controllers/userController');
 var adminController = require('./controllers/adminController');
 var productController = require('./controllers/productController');
+var categoryController = require('./controllers/categoryController');
+var accountController = require('./controllers/accountController');
 
 var app = express();
 
@@ -35,13 +37,15 @@ app.use(bodyParser.urlencoded({
 app.use(handleLayoutMDW);
 
 app.get('/', (req, res) => {
-    res.redirect('/home');
+    res.redirect('/home');s
 });
 
 app.use('/home', homeController);
 app.use('/user', userController);
 app.use('/admin', adminController);
-app.use('/product', productController);
+app.use('/home/product', productController);
+app.use('/home/category', categoryController);
+app.use('/home/account', accountController);
 
 app.listen(3000, () => {
     console.log('server running on port 3000');

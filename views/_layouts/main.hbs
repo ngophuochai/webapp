@@ -38,8 +38,8 @@
 						<li><a href="#"><i class="fa fa-map-marker"></i> 231a/13 Dương Bá Trạc, P1, Q8, TP HCM</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="/register"><i class="fa fa-user-o"></i> Đăng ký</a></li>
-						<li><a href="/login"><i class="fa"></i> Đăng nhập</a></li>
+						<li><a href="/home/account/register"><i class="fa fa-user-o"></i> Đăng ký</a></li>
+						<li><a href="/home/account/login"><i class="fa"></i> Đăng nhập</a></li>
 					</ul>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="/" class="logo">
+								<a href="/home" class="logo">
 									<img src="/imgs/logo.png" alt="">
 								</a>
 							</div>	
@@ -64,7 +64,7 @@
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form action="/search" method="GET">
+								<form action="/home/category" method="GET">
 									<select class="input-select">
 										<option value="0">Tất cả</option>
 										<option value="1">Tên</option>
@@ -95,17 +95,17 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li {{{_sections.navHomeActive}}}><a href="/">Trang chủ</a></li>
+						<li {{{_sections.navHomeActive}}}><a href="/home">Trang chủ</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 								Loại xe
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="/store">Xe con</a></li>
-								<li><a href="/store">Xe tải</a></li>
-								<li><a href="/store">Xe khách</a></li>
-								<li><a href="/store">Xe container</a></li>
+								<li><a href="/home/category">Xe con</a></li>
+								<li><a href="/home/category">Xe tải</a></li>
+								<li><a href="/home/category">Xe khách</a></li>
+								<li><a href="/home/category">Xe container</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -114,11 +114,11 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="/store">Hyundai</a></li>
-								<li><a href="/store">Lexus</a></li>
-								<li><a href="/store">Toyota</a></li>
-								<li><a href="/store">Mitsubishi</a></li>
-								<li><a href="/store">Suzuki</a></li>
+								<li><a href="/home/category">Hyundai</a></li>
+								<li><a href="/home/category">Lexus</a></li>
+								<li><a href="/home/category">Toyota</a></li>
+								<li><a href="/home/category">Mitsubishi</a></li>
+								<li><a href="/home/category">Suzuki</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -138,7 +138,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<ul class="breadcrumb-tree">
-							<li><a href="#">{{{_sections.title}}}</a></li>
+							{{{_sections.breadcrumbRe}}}
 						</ul>
 					</div>
 				</div>

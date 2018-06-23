@@ -4,12 +4,7 @@ var express = require('express'),
 var router = express.Router();
 
 router.get('/', (req, res) => {
-    productRepos.loadAll().then(rows => {
-        var vm = {
-            products: rows
-        };
-        res.render('product/byCat', vm);
-    });
+    res.render('product/detail', {layout: 'main.hbs'});
 });
 
 module.exports = router;

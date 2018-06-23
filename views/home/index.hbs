@@ -2,6 +2,10 @@
     Trang chủ
 {{/section}}
 
+{{#section 'breadcrumbRe'}}
+    <li><a href="/home">Trang chủ</a>
+{{/section}}
+
 {{#section 'navHomeActive'}}
     class = "active"
 {{/section}}
@@ -20,42 +24,39 @@
             </div>
             <!-- /section title -->
 
-            <div class="row">
-                
-                {{#each layoutVM.products}}
-                    <div class="col-md-3 col-xs-6">
-                        <div class="product">
-                            <div style="height: 250px;" class="product-img">
-                                <img src="/imgs/{{ID}}/main.jpg" alt="">
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="#">{{Name}}</a></h3>
-                                <h4 class="product-price">$980.00</h4>
-                                <div>
-                                    <a href="#" class="btn btn-info" role="button">Xem chi tiết</a>
+            <!-- Products tab & slick -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-1">
+                                <!-- product -->
+                                {{#each layoutVM.products}}
+                                <div class="col-md-3 col-xs-6">
+                                    <div class="product">
+                                        <div style="height: 250px;" class="product-img">
+                                            <img src="/imgs/{{ID}}/main.jpg" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-name"><a href="#">{{Name}}</a></h3>
+                                            <h4 class="product-price">$980.00</h4>
+                                            <div>
+                                                <a href="/home/product" class="btn btn-info" role="button">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                {{/each}}
+                                <!-- /product -->
                             </div>
+                            <div id="slick-nav-1" class="products-slick-nav"></div>
                         </div>
-                    </div>
-                {{/each}}
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Hyundai Elantra GLS.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
+                        <!-- /tab -->
                     </div>
                 </div>
-                <!-- /product -->
             </div>
+            <!-- Products tab & slick -->   
         </div>
         <!-- /row -->
     </div>
@@ -77,182 +78,39 @@
             </div>
             <!-- /section title -->
 
-            <div class="row">
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Lexus CT 200h Base.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Lexus CT 200h Base</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
+            <!-- Products tab & slick -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-2">
+                                <!-- product -->
+                                {{#each layoutVM.products}}
+                                <div class="col-md-3 col-xs-6">
+                                    <div class="product">
+                                        <div style="height: 250px;" class="product-img">
+                                            <img src="/imgs/{{ID}}/main.jpg" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-name"><a href="#">{{Name}}</a></h3>
+                                            <h4 class="product-price">$980.00</h4>
+                                            <div>
+                                                <a href="/home/product" class="btn btn-info" role="button">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                                <!-- /product -->
                             </div>
+                            <div id="slick-nav-2" class="products-slick-nav"></div>
                         </div>
+                        <!-- /tab -->
                     </div>
                 </div>
-                <!-- /product -->
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Lexus ES 330.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Lexus ES 330</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Lexus IS 250 Base.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Lexus IS 250 Base</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Lexus IS-F Base.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Lexus IS-F Base</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Lexus LC 500.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Lexus LC 500</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Toyota 4Runner TRD Pro.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Toyota 4Runner TRD Pro</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Toyota Camry CE.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Toyota Camry CE</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Toyota Camry LE.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Toyota Camry LE</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Toyota Celica ST.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Toyota Celica ST</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Toyota Highlander Limited.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Toyota Highlander Limited</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
             </div>
+            <!-- Products tab & slick -->   
         </div>
         <!-- /row -->
     </div>
@@ -273,183 +131,39 @@
                 </div>
             </div>
             <!-- /section title -->
-
-            <div class="row">
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Hyundai Elantra GLS.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
+            <!-- Products tab & slick -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-3">
+                                <!-- product -->
+                                {{#each layoutVM.products}}
+                                <div class="col-md-3 col-xs-6">
+                                    <div class="product">
+                                        <div style="height: 250px;" class="product-img">
+                                            <img src="/imgs/{{ID}}/main.jpg" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-name"><a href="#">{{Name}}</a></h3>
+                                            <h4 class="product-price">$980.00</h4>
+                                            <div>
+                                                <a href="/home/product" class="btn btn-info" role="button">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                                <!-- /product -->
                             </div>
+                            <div id="slick-nav-3" class="products-slick-nav"></div>
                         </div>
+                        <!-- /tab -->
                     </div>
                 </div>
-                <!-- /product -->
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Toyota 4Runner TRD Pro.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Toyota 4Runner TRD Pro</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Toyota Camry CE.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Toyota Camry CE</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Toyota Camry LE.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Toyota Camry LE</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Toyota Celica ST.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Toyota Celica ST</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Hyundai Elantra GLS.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Hyundai Elantra Limited.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Hyundai Elantra Limited</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Hyundai Sonata Limited 2.0T.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Hyundai Sonata Limited 2.0T</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Hyundai Tucson Limited.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Hyundai Tucson Limited</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
-
-                <!-- product -->
-                <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div style="height: 250px;" class="product-img">
-                            <img src="/imgs/Hyundai Veloster Base.jpg" alt="">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Hyundai Veloster Base</a></h3>
-                            <h4 class="product-price">$980.00</h4>
-                            <div>
-                                <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product -->
             </div>
+            <!-- Products tab & slick -->   
         </div>
         <!-- /row -->
     </div>
