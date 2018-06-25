@@ -4,10 +4,11 @@
 
 {{#section 'breadcrumbRe'}}
     <li><a href="/home">Trang chủ</a>
-    <li><a href="/home/product">Sản phẩm</a>
+    <li><a href="/home/product/category">Sản phẩm</a>
 {{/section}}
 
-{{!-- <!-- SECTION -->
+{{#with product}}
+<!-- SECTION -->
 <div class="section">
     <!-- container -->
     <div class="container">
@@ -17,7 +18,7 @@
             <div class="col-md-5 col-md-push-2">
                 <div id="product-main-img">
                     <div class="product-preview">
-                        <img src="/imgs/Hyundai Elantra GLS.jpg" alt="">
+                        <img src="/imgs/{{ID}}/main.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -27,7 +28,7 @@
             <div class="col-md-2  col-md-pull-5">
                 <div id="product-imgs">
                     <div class="product-preview">
-                        <img src="/imgs/Hyundai Elantra GLS.jpg" alt="">
+                        <img src="/imgs/{{ID}}/main.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -36,16 +37,13 @@
             <!-- Product details -->
             <div class="col-md-5">
                 <div class="product-details">
-                    <h2 class="product-name">Hyundai Elantra GLS</h2>
+                    <h2 class="product-name">{{Name}}</h2>
                     <div>
-                        <h3 class="product-price">$980.00</h3>
+                        <h3 class="product-price">{{Price}} VNĐ</h3>
                     </div>
-                    <p>Số lượt xem: 1000</p>
-                    <p>Số lượng bán: 100</p>
-                    <p>Xuất xứ: Lắp ráp CKD</p>
-                    <p>Loại: Xe con</p>
-                    <p>Nhà sản xuất: Hyundai</p>
-                    <p>Sở hữu ngoại hình mới năng động, hiện đại và thể thao dựa trên cảm hứng của ngôn ngữ thiết kế “Điêu khắc dòng chảy 2.0. Elantra hoàn toàn mới sở hữu vật liệu hệ thống khung vỏ mới với hơn 53% thành phần là thép cường lực UHSS (Ultra-High Strength Steel), làm nên một bộ khung vững chắc giúp cho xe ổn định và an toàn hơn”</p>
+                    <p>Loại: {{Category}}</p>
+                    <p>Nhà sản xuất: {{Producer}}</p>
+                    <p>{{Infor}}</p>
 
                 </div>
             </div>
@@ -56,6 +54,7 @@
     <!-- /container -->
 </div>
 <!-- /SECTION -->
+{{/with}}
 
 <!-- Section -->
 <div class="section">
@@ -63,101 +62,47 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-
+            <!-- section title -->
             <div class="col-md-12">
                 <div class="section-title text-center">
                     <h3 class="title">Sản phẩm cùng loại</h3>
                 </div>
             </div>
+            <!-- /section title -->
 
-            <!-- product -->
-            <div class="col-md-3 col-xs-6">
-                <div class="product">
-                    <div style="height: 250px;" class="product-img">
-                        <img src="/imgs/Hyundai Elantra GLS.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
-                        <h3 class="product-price">$980.00</h3>
-                        <div>
-                            <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
+            <!-- Products tab & slick -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-1">
+                                <!-- product -->
+                                {{#each layoutVM.products}}
+                                <div class="col-md-3 col-xs-6">
+                                    <div class="product">
+                                        <div style="height: 250px;" class="product-img">
+                                            <img src="/imgs/{{ID}}/main.jpg" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-name"><a href="#">{{Name}}</a></h3>
+                                            <h4 class="product-price">{{Price}} VNĐ</h4>
+                                            <div>
+                                                <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                                <!-- /product -->
+                            </div>
+                            <div id="slick-nav-1" class="products-slick-nav"></div>
                         </div>
+                        <!-- /tab -->
                     </div>
                 </div>
             </div>
-            <!-- /product -->
-
-            <!-- product -->
-            <div class="col-md-3 col-xs-6">
-                <div class="product">
-                    <div style="height: 250px;" class="product-img">
-                        <img src="/imgs/Hyundai Elantra Limited.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"><a href="#">Hyundai Elantra Limited</a></h3>
-                        <h3 class="product-price">$980.00</h3>
-                        <div>
-                            <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- /product -->
-
-            <!-- product -->
-            <div class="col-md-3 col-xs-6">
-                <div class="product">
-                    <div style="height: 250px;" class="product-img">
-                        <img src="/imgs/Hyundai Sonata Limited 2.0T.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"><a href="#">Hyundai Sonata Limited2.0T</a></h3>
-                        <h3 class="product-price">$980.00</h3>
-                        <div>
-                            <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- /product -->
-            
-            <!-- product -->
-            <div class="col-md-3 col-xs-6">
-                <div class="product">
-                    <div style="height: 250px;" class="product-img">
-                        <img src="/imgs/Hyundai Tucson Limited.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"><a href="#">Hyundai Tucson Limited</a></h3>
-                        <h3 class="product-price">$980.00</h3>
-                        <div>
-                            <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- /product -->
-
-            <!-- product -->
-            <div class="col-md-3 col-xs-6">
-                <div class="product">
-                    <div style="height: 250px;" class="product-img">
-                        <img src="/imgs/Hyundai Veloster Base.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"><a href="#">Hyundai Veloster Base</a></h3>
-                        <h3 class="product-price">$980.00</h3>
-                        <div>
-                            <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- /product -->
+            <!-- Products tab & slick -->   
         </div>
         <!-- /row -->
     </div>
@@ -171,105 +116,50 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-
+            <!-- section title -->
             <div class="col-md-12">
                 <div class="section-title text-center">
                     <h3 class="title">Sản phẩm cùng nhà sản xuất</h3>
                 </div>
             </div>
+            <!-- /section title -->
 
-            <!-- product -->
-            <div class="col-md-3 col-xs-6">
-                <div class="product">
-                    <div style="height: 250px;" class="product-img">
-                        <img src="/imgs/Hyundai Elantra GLS.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"><a href="#">Hyundai Elantra GLS</a></h3>
-                        <h3 class="product-price">$980.00</h3>
-                        <div>
-                            <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
+            <!-- Products tab & slick -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-2">
+                                <!-- product -->
+                                {{#each layoutVM.products}}
+                                <div class="col-md-3 col-xs-6">
+                                    <div class="product">
+                                        <div style="height: 250px;" class="product-img">
+                                            <img src="/imgs/{{ID}}/main.jpg" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-name"><a href="#">{{Name}}</a></h3>
+                                            <h4 class="product-price">{{Price}} VNĐ</h4>
+                                            <div>
+                                                <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                                <!-- /product -->
+                            </div>
+                            <div id="slick-nav-2" class="products-slick-nav"></div>
                         </div>
+                        <!-- /tab -->
                     </div>
-                    
                 </div>
             </div>
-            <!-- /product -->
-
-            <!-- product -->
-            <div class="col-md-3 col-xs-6">
-                <div class="product">
-                    <div style="height: 250px;" class="product-img">
-                        <img src="/imgs/Hyundai Elantra Limited.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"><a href="#">Hyundai Elantra Limited</a></h3>
-                        <h3 class="product-price">$980.00</h3>
-                        <div>
-                            <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- /product -->
-
-            <!-- product -->
-            <div class="col-md-3 col-xs-6">
-                <div class="product">
-                    <div style="height: 250px;" class="product-img">
-                        <img src="/imgs/Hyundai Sonata Limited 2.0T.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"><a href="#">Hyundai Sonata Limited2.0T</a></h3>
-                        <h3 class="product-price">$980.00</h3>
-                        <div>
-                            <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- /product -->
-            
-            <!-- product -->
-            <div class="col-md-3 col-xs-6">
-                <div class="product">
-                    <div style="height: 250px;" class="product-img">
-                        <img src="/imgs/Hyundai Tucson Limited.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"><a href="#">Hyundai Tucson Limited</a></h3>
-                        <h3 class="product-price">$980.00</h3>
-                        <div>
-                            <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- /product -->
-
-            <!-- product -->
-            <div class="col-md-3 col-xs-6">
-                <div class="product">
-                    <div style="height: 250px;" class="product-img">
-                        <img src="/imgs/Hyundai Veloster Base.jpg" alt="">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"><a href="#">Hyundai Veloster Base</a></h3>
-                        <h3 class="product-price">$980.00</h3>
-                        <div>
-                            <a href="/product" class="btn btn-info" role="button">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- /product -->
+            <!-- Products tab & slick --> 
         </div>
         <!-- /row -->
     </div>
     <!-- /container -->
 </div>
-<!-- /Section --> --}}
+<!-- /Section -->

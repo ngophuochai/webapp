@@ -5,18 +5,16 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var handleLayoutMDW = require('./middle-wares/handleLayout');
+var handle404MDW = require('./middle-wares/handle404');
 
 var homeController = require('./controllers/homeController');
-var userController = require('./controllers/userController');
-var adminController = require('./controllers/adminController');
 var productController = require('./controllers/productController');
-var categoryController = require('./controllers/categoryController');
 var accountController = require('./controllers/accountController');
 
 var app = express();
 
 app.engine('hbs', exphbs({
-    defaultLayout: 'main',
+    defaultLayout: 'main.hbs',
     layoutsDir: 'views/_layouts/',
     helpers: {
         section: exphbs_section()
@@ -41,11 +39,10 @@ app.get('/', (req, res) => {
 });
 
 app.use('/home', homeController);
-app.use('/user', userController);
-app.use('/admin', adminController);
 app.use('/home/product', productController);
-app.use('/home/category', categoryController);
 app.use('/home/account', accountController);
+
+app.use(handle404MDW);
 
 app.listen(3000, () => {
     console.log('server running on port 3000');

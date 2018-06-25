@@ -55,7 +55,7 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="/home" class="logo">
-									<img src="/imgs/logo.png" alt="">
+									<img src="/imgs/_logo/logo.png" alt="">
 								</a>
 							</div>	
 						</div>
@@ -64,7 +64,7 @@
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form action="/home/category" method="GET">
+								<form action="/home/category/1" method="GET">
 									<select class="input-select">
 										<option value="0">Tất cả</option>
 										<option value="1">Tên</option>
@@ -102,10 +102,9 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="/home/category">Xe con</a></li>
-								<li><a href="/home/category">Xe tải</a></li>
-								<li><a href="/home/category">Xe khách</a></li>
-								<li><a href="/home/category">Xe container</a></li>
+								{{#each layoutCat.categories}}
+								<li><a href="/home/product/category/{{ID}}">{{Name}}</a></li>
+								{{/each}}
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -114,11 +113,9 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="/home/category">Hyundai</a></li>
-								<li><a href="/home/category">Lexus</a></li>
-								<li><a href="/home/category">Toyota</a></li>
-								<li><a href="/home/category">Mitsubishi</a></li>
-								<li><a href="/home/category">Suzuki</a></li>
+								{{#each layoutPer.producers}}
+								<li><a href="/home/product/producer/{{ID}}">{{Name}}</a></li>
+								{{/each}}
 							</ul>
 						</li>
 					</ul>

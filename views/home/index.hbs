@@ -32,7 +32,7 @@
                         <div id="tab1" class="tab-pane active">
                             <div class="products-slick" data-nav="#slick-nav-1">
                                 <!-- product -->
-                                {{#each layoutVM.products}}
+                                {{#each layoutPro.products}}
                                 <div class="col-md-3 col-xs-6">
                                     <div class="product">
                                         <div style="height: 250px;" class="product-img">
@@ -40,9 +40,9 @@
                                         </div>
                                         <div class="product-body">
                                             <h3 class="product-name"><a href="#">{{Name}}</a></h3>
-                                            <h4 class="product-price">$980.00</h4>
+                                            <h4 class="product-price">{{Price}} VNĐ</h4>
                                             <div>
-                                                <a href="/home/product" class="btn btn-info" role="button">Xem chi tiết</a>
+                                                <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
                                             </div>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                         <div id="tab1" class="tab-pane active">
                             <div class="products-slick" data-nav="#slick-nav-2">
                                 <!-- product -->
-                                {{#each layoutVM.products}}
+                                {{#each layoutPro.products}}
                                 <div class="col-md-3 col-xs-6">
                                     <div class="product">
                                         <div style="height: 250px;" class="product-img">
@@ -94,9 +94,9 @@
                                         </div>
                                         <div class="product-body">
                                             <h3 class="product-name"><a href="#">{{Name}}</a></h3>
-                                            <h4 class="product-price">$980.00</h4>
+                                            <h4 class="product-price">{{Price}} VNĐ</h4>
                                             <div>
-                                                <a href="/home/product" class="btn btn-info" role="button">Xem chi tiết</a>
+                                                <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
                                             </div>
                                         </div>
                                     </div>
@@ -139,7 +139,7 @@
                         <div id="tab1" class="tab-pane active">
                             <div class="products-slick" data-nav="#slick-nav-3">
                                 <!-- product -->
-                                {{#each layoutVM.products}}
+                                {{#each layoutPro.products}}
                                 <div class="col-md-3 col-xs-6">
                                     <div class="product">
                                         <div style="height: 250px;" class="product-img">
@@ -147,9 +147,9 @@
                                         </div>
                                         <div class="product-body">
                                             <h3 class="product-name"><a href="#">{{Name}}</a></h3>
-                                            <h4 class="product-price">$980.00</h4>
+                                            <h4 class="product-price">{{Price}} VNĐ</h4>
                                             <div>
-                                                <a href="/home/product" class="btn btn-info" role="button">Xem chi tiết</a>
+                                                <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
                                             </div>
                                         </div>
                                     </div>
