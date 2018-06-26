@@ -4,14 +4,31 @@
 
 {{#section 'breadcrumbRe'}}
     <li><a href="/home">Trang chủ</a>
-    <li><a href="/home/account/register">Đăng ký</a>
+    <li><a href="javascript:;">Đăng ký</a>
 {{/section}}
 
-{{!-- <!-- SECTION -->
+<!-- SECTION -->
 <div class="section">
     <!-- container -->
     <div class="container">
         <!-- row -->
+        {{#if isAction}}
+            {{#if isPassword}}
+                {{#if isSuccess}}
+                <div class="alert alert-success">
+                    <strong>Đăng ký thành công!</strong>
+                </div>
+                {{else}}
+                <div class="alert alert-warning">
+                    <strong>Tài khoản đã tồn tại!</strong>
+                </div>
+                {{/if}}
+            {{else}}
+            <div class="alert alert-warning">
+                <strong>Sai mật khẩu!</strong>
+            </div>
+            {{/if}}
+        {{/if}}
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
@@ -19,33 +36,33 @@
                     <div class="section-title text-center">
                         <h2 class="title">Đăng ký</h2>
                     </div><br>
-                    <div class="form-group">
-                        <label>Họ và tên:</label>
-                        <input class="input" type="text" placeholder="Họ và tên">
-                    </div>
-                    <div class="form-group">
-                        <label>Số điện thoại:</label>
-                        <input class="input" type="text" placeholder="Số điện thoại">
-                    </div>
-                    <div class="form-group">
-                        <label>Email:</label>
-                        <input class="input" type="email" placeholder="Địa chỉ email">
-                    </div>
-                    <div class="form-group">
-                        <label>Nơi ở:</label>
-                        <input class="input" type="email" placeholder="Nơi ở">
-                    </div>
-                    <div class="form-group">
-                        <label>Mật khẩu:</label>
-                        <input class="input" type="password" placeholder="Mật khẩu">
-                    </div>
-                    <div class="form-group">
-                        <label>Nhập lại mật khẩu:</label>
-                        <input class="input" type="password" placeholder="Nhập lại mật khẩu">
-                    </div>
+                    <form action="/home/account/register" method="POST">
+                        <div class="form-group">
+                            <label>Tên tài khoản:</label>
+                            <input name="username" class="input" type="text" placeholder="Tên tài khoản">
+                        </div>
+                        <div class="form-group">
+                            <label>Mật khẩu:</label>
+                            <input name="password" class="input" type="password" placeholder="Mật khẩu">
+                        </div>
+                        <div class="form-group">
+                            <label>Nhập lại mật khẩu:</label>
+                            <input name="rePassword" class="input" type="password" placeholder="Nhập lại mật khẩu">
+                        </div>
+                        <div class="form-group">
+                            <label>Họ tên:</label>
+                            <input name="name" class="input" type="text" placeholder="Họ tên">
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input name="email" class="input" type="text" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label>Địa chỉ:</label>
+                            <input name="address" class="input" type="text" placeholder="Địa chỉ">
+                        </div>
 
-                    <form action="?" method="POST">
-                        <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                        {{!-- <div class="g-recaptcha" data-sitekey="your_site_key"></div> --}}
                         <br/>
                         <input type="submit" class="primary-btn order-submit" value="Đăng ký" >
                     </form>
@@ -56,4 +73,4 @@
     </div>
     <!-- /container -->
 </div>
-<!-- /SECTION --> --}}
+<!-- /SECTION -->

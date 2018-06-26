@@ -40,8 +40,14 @@
 						<li><a href="#"><i class="fa fa-map-marker"></i> 231a/13 Dương Bá Trạc, P1, Q8, TP HCM</a></li>
 					</ul>
 					<ul class="header-links pull-right">
+						{{#if layoutAcc.isLogged}}
+						<form id="frmLogout" method="post" action="/home/account/logout"></form>
+						<li><a href="/home/account/profile"><i class="fa fa-user-o"></i>{{layoutAcc.curUser.name}}</a></li>
+	                    <li><a id="lnkLogout" href="javascript:;"><i class="fa"></i>Đăng xuất</a></li>
+						{{else}}
 						<li><a href="/home/account/register"><i class="fa fa-user-o"></i> Đăng ký</a></li>
 						<li><a href="/home/account/login"><i class="fa"></i> Đăng nhập</a></li>
+						{{/if}}
 					</ul>
 				</div>
 			</div>
@@ -194,6 +200,11 @@
 		<script src="/js/nouislider.min.js"></script>
 		<script src="/js/jquery.zoom.min.js"></script>
 		<script src="/js/main.js"></script>
+		<script type="text/javascript">
+		$('#lnkLogout').on('click', function() {
+		    $('#frmLogout').submit();
+		});
+		</script>
 	</body>
 </html>
 </html>
