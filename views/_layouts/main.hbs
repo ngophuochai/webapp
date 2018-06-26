@@ -25,6 +25,8 @@
 
         <!-- Custom stlylesheet -->
         <link type="text/css" rel="stylesheet" href="/css/style.css"/>
+
+		<link rel="icon" href="/imgs/_logo/icon_title.png" />
     </head>
     <body>
 		<!-- HEADER -->
@@ -52,7 +54,7 @@
 					<!-- row -->
 					<div class="row">	
 						<!-- LOGO -->
-						<div class="col-md-3">
+						<div class="col-md-4">
 							<div class="header-logo">
 								<a href="/home" class="logo">
 									<img src="/imgs/_logo/logo.png" alt="">
@@ -64,16 +66,11 @@
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form action="/home/category/1" method="GET">
-									<select class="input-select">
-										<option value="0">Tất cả</option>
-										<option value="1">Tên</option>
-										<option value="1">Giá</option>
-										<option value="1">Loại</option>
-										<option value="1">Nhà sản xuất</option>
-									</select>
-									<input class="input" placeholder="Nhập từ khóa">
-									<input type="submit" class="search-btn" value="Tìm kiếm" >
+								<form action="/home/search" method="GET">
+									<input name="name" class="input" placeholder="Nhập tên xe">
+									<input hidden readonly name="category" class="input" value="%">
+									<input hidden readonly name="producer" class="input" value="%">
+									<button type="submit" class="search-btn">Tìm kiếm</button>
 								</form>
 							</div>
 						</div>

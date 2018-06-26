@@ -1,6 +1,7 @@
 var express = require('express'),
     productRepos = require('../repos/productRepos'),
-    categoryRepos = require('../repos/categoryRepos');
+    categoryRepos = require('../repos/categoryRepos'),
+    producerRepos = require('../repos/producerRepos');
 
 var router = express.Router();
 
@@ -81,8 +82,9 @@ router.get('/producer/:perID', (req, res) => {
 
     var p1 = productRepos.loadPagePer(perID, offset);
     var p2 = productRepos.countPer(perID);
+    var p = producerRepos.single(perID);
 
-    Promise.all([p1, p2]).then(([rows, count_rows]) => {
+    Promise.all([p1, p2, p]).then(([rows, count_rows, rows_p]) => {
         var total = count_rows[0].total;
         var nPages = total / 6;
         if (total % 6 > 0)
@@ -108,6 +110,7 @@ router.get('/producer/:perID', (req, res) => {
             page_numbers: numbers,
             valueLeft: pageLeft,
             valueRight: pageRight,
+            producer: rows_p[0]
         };
         res.render('product/producer', vm);
     })

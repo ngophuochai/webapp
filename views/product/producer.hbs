@@ -4,7 +4,10 @@
 
 {{#section 'breadcrumbRe'}}
     <li><a href="/home">Trang chủ</a>
-    <li><a href="/home/product">Danh sách</a>
+    <li><a href="javascript:;">Danh sách</a>
+    {{#with producer}}
+    <li><a href="javascript:;">{{Name}}</a>
+    {{/with}}
 {{/section}}
 
 
@@ -21,7 +24,7 @@
                     <h3 class="aside-title">Loại xe</h3>
                     <div class="list-group">
                         {{#each layoutCat.categories}}
-                        <a class="list-group-item" href="/home/product/category/{{ID}}">{{Name}}</a>
+                        <a class="list-group-item"  href="/home/product/category/{{ID}}">{{Name}}</a>
                         {{/each}}
                     </div>
                 </div>
@@ -32,7 +35,7 @@
                     <h3 class="aside-title">Hãng xe</h3>
                     <div class="list-group">
                         {{#each layoutPer.producers}}
-                        <a class="list-group-item" href="/home/product/producer/{{ID}}">{{Name}}</a>
+                        <a class="list-group-item"  href="/home/product/producer/{{ID}}">{{Name}}</a>
                         {{/each}}
                     </div>
                 </div>
@@ -72,7 +75,7 @@
                                 <img src="/imgs/{{ID}}/main.jpg" alt="">
                             </div>
                             <div class="product-body">
-                                <h3 class="product-name"><a href="#">{{Name}}</a></h3>
+                                <h3 style="height: 30px;" class="product-name"><a href="#">{{Name}}</a></h3>
                                 <h4 class="product-price">{{Price}} VNĐ</h4>
                                 <div>
                                     <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>

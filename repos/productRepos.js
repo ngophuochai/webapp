@@ -29,3 +29,19 @@ exports.single = id => {
     var sql = `select * from products where ID = ${id}`;
     return db.load(sql);
 }
+
+// exports.search = pro => {
+//     var sql = 'select * from products where `name`' + `like '${pro.name}%' and category like '${pro.catID}' and producer like '${pro.perID}'`;
+//     return db.load(sql);
+// }
+
+exports.countSearch = pro => {
+    var sql = 'select count(*) as total from products where `name`' + `like '${pro.name}%' and category like '${pro.catID}' and producer like '${pro.perID}'`;
+    return db.load(sql);
+}
+
+exports.loadPageSearch = (pro, offset) => {
+    var sql = 'select * from products where `name`' + `like '${pro.name}%' and category like '${pro.catID}' and producer like '${pro.perID}' limit 8 offset ${offset}`;
+    return db.load(sql);
+    
+}

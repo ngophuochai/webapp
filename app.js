@@ -10,6 +10,7 @@ var handle404MDW = require('./middle-wares/handle404');
 var homeController = require('./controllers/homeController');
 var productController = require('./controllers/productController');
 var accountController = require('./controllers/accountController');
+var searchController = require('./controllers/searchController');
 
 var app = express();
 
@@ -41,6 +42,7 @@ app.get('/', (req, res) => {
 app.use('/home', homeController);
 app.use('/home/product', productController);
 app.use('/home/account', accountController);
+app.use('/home/search', searchController);
 
 app.use(handle404MDW);
 

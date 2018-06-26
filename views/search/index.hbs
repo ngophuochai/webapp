@@ -1,0 +1,104 @@
+{{#section 'title'}}
+    Tìm kiếm
+{{/section}}
+
+{{#section 'breadcrumbRe'}}
+    <li><a href="/home">Trang chủ</a>
+    <li><a href="javascript:;">Tìm kiếm</a>
+{{/section}}
+
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <form action="/home/search" method="GET">
+                <div class="col-md-4">
+                    <input name="name" class="input" placeholder="Nhập tên xe" value="{{product.name}}">
+                </div>
+                <div class="col-md-2">
+                    <select name="category" class="input-select">
+                        <option value="%">Tất cả loại</option>
+                        {{#each categories}}
+                            {{#if isSelected}}
+                            <option selected value="{{value.ID}}">{{value.Name}}</option>
+                            {{else}}
+                            <option value="{{value.ID}}">{{value.Name}}</option>
+                            {{/if}}
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select name="producer" class="input-select">
+                        <option value="%">Tất cả hãng</option>
+                        {{#each producers}}
+                            {{#if isSelected}}
+                            <option selected value="{{value.ID}}">{{value.Name}}</option>
+                            {{else}}
+                            <option value="{{value.ID}}">{{value.Name}}</option>
+                            {{/if}}
+                        {{/each}}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-danger">Tìm kiếm</button><br>
+            </form><br><br>
+            <!-- section title -->
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2>Kết quả tìm kiếm '{{product.name}}'</h2>
+                </div>  
+            </div>
+            <!-- /section title -->
+
+            <!-- Products tab & slick -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                            <!-- product -->
+                            {{#each products}}
+                            <div class="col-md-3 col-xs-6">
+                                <div class="product">
+                                    <div style="height: 250px;" class="product-img">
+                                        <img src="/imgs/{{ID}}/main.jpg" alt="">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3 style="height: 30px;" class="product-name"><a href="#">{{Name}}</a></h3>
+                                        <h4 class="product-price">{{Price}} VNĐ</h4>
+                                        <div>
+                                            <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            <!-- /product -->
+                        </div>
+                        <!-- /tab -->
+                    </div>
+                </div>
+                <!-- store bottom filter -->
+                <div class="store-filter clearfix">
+                    <ul class="store-pagination">
+                        <li><a href="?name={{product.name}}&category={{product.catID}}&producer={{product.perID}}&page={{valueLeft}}"><i class="fa fa-angle-left"></i></a></li>
+                        {{#each page_numbers}}
+                            {{#if isCurrentPage}}
+                            <li class="active"><a style="color:white" href="javascript:;">{{value}}</a></li>
+                            {{else}}
+                            <li><a href="?name={{product.name}}&category={{product.catID}}&producer={{product.perID}}&page={{value}}">{{value}}</a></li>
+                            {{/if}}
+                        {{/each}}
+                        <li><a href="?name={{product.name}}&category={{product.catID}}&producer={{product.perID}}&page={{valueRight}}"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </div>
+                <!-- /store bottom filter -->
+            </div>
+            <!-- Products tab & slick -->   
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION -->
