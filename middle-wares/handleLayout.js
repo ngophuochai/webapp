@@ -1,7 +1,8 @@
 var productRepos = require('../repos/productRepos'),
     categoryRepos = require('../repos/categoryRepos'),
     producerRepos = require('../repos/producerRepos'),
-    accountRepos = require('../repos/accountRepos');
+    accountRepos = require('../repos/accountRepos'),
+    cartRepos = require('../repos/cartRepos');
 
 module.exports = (req, res, next) => {
     if (req.session.isLogged === undefined) {
@@ -13,6 +14,7 @@ module.exports = (req, res, next) => {
             accounts: rows,
             isLogged: req.session.isLogged,
             curUser: req.session.curUser,
+            cartSummary: +cartRepos.getNumberOfItems(req.session.cart),
         }
     })
 

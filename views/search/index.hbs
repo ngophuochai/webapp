@@ -71,6 +71,15 @@
                                             <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
                                         </div>
                                     </div>
+                                    {{#if ../layoutAcc.isLogged}}
+                                    <div class="add-to-cart">
+                                        <a data-proid="{{ID}}" href="javascript:;" class="addItem"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
+                                    </div>
+                                    {{else}}
+                                    <div class="add-to-cart">
+                                        <a href="/home/account/login"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
+                                    </div>
+                                    {{/if}}
                                 </div>
                             </div>
                             {{/each}}

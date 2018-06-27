@@ -1,0 +1,82 @@
+{{#section 'title'}}
+    Giỏ hàng
+{{/section}}
+
+{{#section 'breadcrumbRe'}}
+    <li><a href="/home">Trang chủ</a>
+    <li><a href="/home/cart">Giỏ hàng</a>
+{{/section}}
+
+{{#section 'js'}}
+<script type="text/javascript">
+	$('.removeItem').on('click', function() {
+        var id = $(this).data('proid');
+	    $('#txtP').val(id);
+	    $('#frmRemove').submit();
+	});
+</script>
+{{/section}}
+
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <h2>Giỏ hàng</h2><br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="col-md-1">Hình ảnh</th>
+                    <th class="col-md-4">Tên xe</th>
+                    <th class="col-md-3">Số lượng</th>
+                    <th class="col-md-2">Đơn giá</th>
+                    <th class="col-md-2">Tổng cộng</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each items}}
+                <tr style="width: 100px">
+                    <td>
+                        <div class="product-img">
+                            <img style="width: 80px;" src="/imgs/{{product.ID}}/main.jpg" alt="">
+                        </div>
+                    </td>
+                    <td>{{product.Name}}</td>
+                    <td>
+                        <div class="row">
+                            <form id="frmRemove" method="POST" action="/home/cart/remove">
+                                <input type="hidden" name="proID" id="txtP">
+                            </form>
+                            <form method="POST" action="/home/cart/update">
+                                <div class="col-md-4 input-number">
+                                    <input type="hidden" name="proID" value="{{product.ID}}">
+                                    <input type="number" name="quantity" value="{{quantity}}">
+                                    <span class="qty-up">+</span>
+                                    <span class="qty-down">-</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-success"><span class="fa fa-refresh"></span></button>
+                                </div>
+                                <a data-proid="{{product.ID}}" href="javascript:;" class="btn btn-danger removeItem"><span class="fa fa-remove"></span></a>
+                            </form>
+                        </div>
+                    </td>
+                    <td>{{product.Price}} VNĐ</td>
+                    <td>{{amount}} VNĐ</td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+            <div class="text-right">
+                <h4><b>Thành tiền: {{sumAmount}} VNĐ</b></h4>
+            </div>
+        </div>
+        <!-- /row -->
+        <div class="section-title text-right">
+            <a href="/user/checkout" class="primary-btn order-submit">Thanh toán</a>
+        </div>
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION -->

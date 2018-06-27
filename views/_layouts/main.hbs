@@ -81,6 +81,23 @@
 							</div>
 						</div>
 						<!-- /SEARCH BAR -->
+						<!-- ACCOUNT -->
+						{{#if layoutAcc.isLogged}}
+                        <div class="col-md-2 clearfix">
+                            <div class="header-ctn">
+                                <!-- Cart -->
+                                <div class="dropdown">
+                                    <a href="/home/cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <span>Giỏ hàng</span>
+                                        <div class="qty">{{layoutAcc.cartSummary}}</div>
+                                    </a>
+                                </div>
+                                <!-- /Cart -->
+                            </div>
+                        </div>
+						{{/if}}
+                        <!-- /ACCOUNT -->
 					</div>
 					<!-- row -->
 				</div>
@@ -205,6 +222,7 @@
 		    $('#frmLogout').submit();
 		});
 		</script>
+		{{{_sections.js}}}
 	</body>
 </html>
 </html>
