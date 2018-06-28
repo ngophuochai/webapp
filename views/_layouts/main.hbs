@@ -40,9 +40,9 @@
 						<li><a href="#"><i class="fa fa-map-marker"></i> 231a/13 Dương Bá Trạc, P1, Q8, TP HCM</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						{{#if layoutAcc.isLogged}}
+						{{#if layoutVM.isLogged}}
 						<form id="frmLogout" method="post" action="/home/account/logout"></form>
-						<li><a href="/home/account/profile"><i class="fa fa-user-o"></i>{{layoutAcc.curUser.name}}</a></li>
+						<li><a href="/home/account/profile"><i class="fa fa-user-o"></i>{{layoutVM.curUser.name}}</a></li>
 	                    <li><a id="lnkLogout" href="javascript:;"><i class="fa"></i>Đăng xuất</a></li>
 						{{else}}
 						<li><a href="/home/account/register"><i class="fa fa-user-o"></i> Đăng ký</a></li>
@@ -82,7 +82,7 @@
 						</div>
 						<!-- /SEARCH BAR -->
 						<!-- ACCOUNT -->
-						{{#if layoutAcc.isLogged}}
+						{{#if layoutVM.isLogged}}
                         <div class="col-md-2 clearfix">
                             <div class="header-ctn">
                                 <!-- Cart -->
@@ -90,7 +90,7 @@
                                     <a href="/home/cart">
                                         <i class="fa fa-shopping-cart"></i>
                                         <span>Giỏ hàng</span>
-                                        <div class="qty">{{layoutAcc.cartSummary}}</div>
+                                        <div class="qty">{{layoutVM.cartSummary}}</div>
                                     </a>
                                 </div>
                                 <!-- /Cart -->
@@ -118,11 +118,11 @@
 						<li {{{_sections.navHomeActive}}}><a href="/home">Trang chủ</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-								Loại xe
+								Kiểu xe
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								{{#each layoutCat.categories}}
+								{{#each layoutVM.categories}}
 								<li><a href="/home/product/category/{{ID}}">{{Name}}</a></li>
 								{{/each}}
 							</ul>
@@ -133,7 +133,7 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								{{#each layoutPer.producers}}
+								{{#each layoutVM.producers}}
 								<li><a href="/home/product/producer/{{ID}}">{{Name}}</a></li>
 								{{/each}}
 							</ul>

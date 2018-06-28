@@ -21,6 +21,7 @@
                     <div class="list-group">
                         <a class="list-group-item" href="/home/account/profile/infor">Cập nhật thông tin tài khoản</a>
                         <a class="list-group-item" href="/home/account/profile/password">Thay đổi mật khẩu</a>
+                        <a class="list-group-item" href="/home/account/history/{{layoutVM.curUser.username}}">Lịch sử mua hàng</a>
                     </div>
                 </div>
                 <!-- /aside Widget -->
@@ -42,20 +43,20 @@
                     </div><br>
                     <form action="/home/account/profile/infor" method="POST">
                         <div class="form-group">
-                            <label>Tên tài khoản: {{layoutAcc.curUser.username}}</label>
-                            <input readonly hidden name="username" class="input" type="text" value="{{layoutAcc.curUser.username}}">
+                            <label>Tên tài khoản: {{layoutVM.curUser.username}}</label>
+                            <input readonly hidden name="username" class="input" type="text" value="{{layoutVM.curUser.username}}">
                         </div> 
                         <div class="form-group">
                             <label>Họ tên:</label>
-                            <input name="name" class="input" type="text" value="{{layoutAcc.curUser.name}}">
+                            <input name="name" class="input" type="text" value="{{layoutVM.curUser.name}}">
                         </div>
                         <div class="form-group">
                             <label>Email:</label>
-                            <input name="email" class="input" type="text" value="{{layoutAcc.curUser.email}}">
+                            <input name="email" class="input" type="text" value="{{layoutVM.curUser.email}}">
                         </div>
                         <div class="form-group">
                             <label>Địa chỉ:</label>
-                            <input name="address" class="input" type="text" value="{{layoutAcc.curUser.address}}">
+                            <input name="address" class="input" type="text" value="{{layoutVM.curUser.address}}">
                         </div><br>
                         <input type="submit" class="primary-btn order-submit" value="Cập nhật">
                     </form>
@@ -80,7 +81,7 @@
                         <h3 class="title">Thay đổi mật khẩu</h3>
                     </div><br>
                     <form action="/home/account/profile/password" method="POST">
-                        <input readonly hidden name="username" class="input" type="text" value="{{layoutAcc.curUser.username}}">
+                        <input readonly hidden name="username" class="input" type="text" value="{{layoutVM.curUser.username}}">
                         <div class="form-group">
                             <label>Mật khẩu mới:</label>
                             <input name="newPassword" class="input" type="password" placeholder="Mật khẩu mới">
@@ -91,6 +92,94 @@
                         </div>
                         <input type="submit" class="primary-btn order-submit" value="Thay đổi">
                     </form>
+                </div>
+            </div>
+            {{/if}}
+            {{#if isHistory}}
+            <div class="section-title">
+                <h3 class="title">Lịch sử đơn hàng</h3>
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="col-md-1">Mã ĐH</th>
+                    <th class="col-md-3">Tên xe</th>
+                    <th class="col-md-1">Số lượng</th>
+                    <th class="col-md-1">Tổng tiền</th>
+                    <th class="col-md-1">Tình trạng</th>
+                    <th class="col-md-2">Ngày tạo</th>
+                    <th class="col-md-1"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each items}}
+                <tr>
+                    <td>{{product.ID}}</td>
+                    <td>{{product.Name}}</td>
+                    <td>{{product.ProQuantity}}</td>
+                    <td>{{amount}}</td>
+                    <td><b style="color: green">{{product.Status}}</b></td>
+                    <td>{{checkoutDay}}</td>
+                    <td> <a href="/account/history/infor/{{product.ID}}" class="btn btn-success">Chi tiết</a></td>
+                </tr>
+                {{/each}}
+            </table>
+            {{/if}}
+            {{#if isInforHistory}}
+            <div class="billing-details">
+                <div class="section-title">
+                    <h3 class="title">Thông tin đơn hàng</h3>
+                </div>
+                <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="col-md-2">Mã đơn hàng</th>
+                            <th class="col-md-1">Hình ảnh</th>
+                            <th class="col-md-2">Tên xe</th>
+                            <th class="col-md-1">Số lượng</th>
+                            <th class="col-md-1">Tình trạng</th>
+                            <th class="col-md-1">Tổng tiền</th>
+                            <th class="col-md-2">Ngày tạo</th>
+                            <th class="col-md-2">Phí giao hàng</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#with item}}
+                        <tr>
+                            <td>MA1512</td>
+                            <td>
+                                <div class="product-img">
+                                    <img style="width: 100px;" src="../img/Hyundai Elantra GLS.jpg" alt="">
+                                </div>
+                            </td>
+                            <td>Hyundai Elantra GLS</td>
+                            <td>1</td>
+                            <td>Đã giao</td>
+                            <td>$980.00</td>
+                            <td>26/04/2018</td>
+                            <td>Miễn phí</td>
+                        </tr>
+                        {{/with}}
+                    </tbody>
+                </table>
+
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <label>Địa chỉ giao hàng:</label>
+                        <input class="input" type="text" value="231a/13 Dương Bá Trạc" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Tỉnh/ Thành phố:</label>
+                        <input class="input" type="text" value="TP Hồ Chí Minh" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Quận/ Huyện:</label>
+                        <input class="input" type="text" value="Quận 8" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Phường/ Xã:</label>
+                        <input class="input" type="text" value="Phường 1" readonly>
+                    </div>
                 </div>
             </div>
             {{/if}}

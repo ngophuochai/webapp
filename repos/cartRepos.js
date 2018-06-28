@@ -1,3 +1,5 @@
+var db = require('../fn/db');
+
 exports.getNumberOfItems = cart => {
     if (!cart) {
         return -1;
@@ -44,4 +46,19 @@ exports.remove = (cart, item) => {
         items.push(cart.pop());
     }
     return
+}
+
+exports.loadAll = (username) => {
+    var sql = `select * from cart c, products p where c.ProID = p.ID and c.username = '${username}' order by CheckoutDay DESC`;
+    return db.load(sql);
+}
+
+exports.checkout = (username, cItems, address, i) => {
+    var sql = `insert into cart(username, ProID, ProQuantity, Address, CheckoutDay, Status) values('${username}', '${cItems[i].ProID}', '${cItems[i].ProQuantity}', '${address}', current_time, 'Đã giao')`;
+    return db.save(sql);
+}
+
+exports.single = (id) => {
+    var sql = `select * from cart c, products p where c.ProID = p.ID and c.ID = '${id}'`;
+    return db.load(sql);
 }

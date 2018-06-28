@@ -13,10 +13,17 @@ router.get('/detail/:proID', (req, res) => {
     } else {
         productRepos.single(proID).then(rows => {
             if (rows.length > 0) {
-                var vm = {
-                    product: rows[0]
-                };
-                res.render('product/detail', vm);
+                var p = rows[0];
+                var p1 = productRepos.loadLikeCategory(rows[0].Category, 5);
+                var p2 = productRepos.loadLikeProducer(rows[0].Producer, 5);
+                Promise.all([p, p1, p2]).then(([rows1, rows2, rows3]) => {
+                    var vm = {
+                        product: rows1,
+                        productsCat5: rows2,
+                        productsPer5: rows3
+                    }
+                    res.render('product/detail', vm);
+                })
             }
             else {
                 res.statusCode = 404;

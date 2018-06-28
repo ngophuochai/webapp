@@ -9,32 +9,38 @@ module.exports = (req, res, next) => {
         req.session.isLogged = false;
     }
 
-    accountRepos.loadAll().then(rows => {
-        res.locals.layoutAcc = {
-            accounts: rows,
+    var cat = categoryRepos.loadAll();
+    var per = producerRepos.loadAll();
+
+    Promise.all([cat, per]).then(([rows1, rows2]) => {
+        res.locals.layoutVM = {
+            categories: rows1,
+            producers: rows2,
             isLogged: req.session.isLogged,
             curUser: req.session.curUser,
             cartSummary: +cartRepos.getNumberOfItems(req.session.cart),
         }
-    })
-
-    productRepos.loadAll().then(rows => {
-        res.locals.layoutPro = {
-            products: rows
-        }
-    });
-
-    categoryRepos.loadAll().then(rows => {
-        res.locals.layoutCat = {
-            categories: rows
-        }
-    });
-
-    producerRepos.loadAll().then(rows => {
-        res.locals.layoutPer = {
-            producers: rows
-        }
 
         next();
-    });
+    })
+
+    // productRepos.loadAll().then(rows => {
+    //     res.locals.layoutPro = {
+    //         products: rows
+    //     }
+    // });
+
+    // categoryRepos.loadAll().then(rows => {
+    //     res.locals.layoutCat = {
+    //         categories: rows
+    //     }
+    // });
+
+    // producerRepos.loadAll().then(rows => {
+    //     res.locals.layoutPer = {
+    //         producers: rows
+    //     }
+
+    //     next();
+    // });
 }

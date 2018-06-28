@@ -7,12 +7,27 @@
     <li><a href="javascript:;">Tìm kiếm</a>
 {{/section}}
 
+{{#section 'js'}}
+<script type="text/javascript">
+	$('.addItem').on('click', function() {
+	    var id = $(this).data('proid');
+	    $('#txtP').val(id);
+	    $('#txtQ').val(1);
+	    $('#frmAddItem').submit();
+	});
+</script>
+{{/section}}
+
 <!-- SECTION -->
 <div class="section">
     <!-- container -->
     <div class="container">
         <!-- row -->
         <div class="row">
+            <form id="frmAddItem" method="post" action="/home/cart/add">
+                <input type="hidden" name="proID" id="txtP">
+                <input type="hidden" name="quantity" id="txtQ">
+            </form>
             <form action="/home/search" method="GET">
                 <div class="col-md-4">
                     <input name="name" class="input" placeholder="Nhập tên xe" value="{{product.name}}">
@@ -61,7 +76,7 @@
                             {{#each products}}
                             <div class="col-md-3 col-xs-6">
                                 <div class="product">
-                                    <div style="height: 250px;" class="product-img">
+                                    <div style="height: 210px;" class="product-img">
                                         <img src="/imgs/{{ID}}/main.jpg" alt="">
                                     </div>
                                     <div class="product-body">
@@ -71,7 +86,7 @@
                                             <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
                                         </div>
                                     </div>
-                                    {{#if ../layoutAcc.isLogged}}
+                                    {{#if ../layoutVM.isLogged}}
                                     <div class="add-to-cart">
                                         <a data-proid="{{ID}}" href="javascript:;" class="addItem"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
                                     </div>
@@ -81,6 +96,7 @@
                                     </div>
                                     {{/if}}
                                 </div>
+                                <br><br>
                             </div>
                             {{/each}}
                             <!-- /product -->

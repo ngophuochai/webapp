@@ -47,20 +47,24 @@
                         <div id="tab1" class="tab-pane active">
                             <div class="products-slick" data-nav="#slick-nav-1">
                                 <!-- product -->
-                                {{#each layoutPro.products}}
+                                {{#each productsDay}}
                                 <div class="col-md-3 col-xs-6">
                                     <div class="product">
-                                        <div style="height: 250px;" class="product-img">
+                                        <div style="height: 210px;" class="product-img">
                                             <img src="/imgs/{{ID}}/main.jpg" alt="">
+                                            <div class="product-label">
+                                                <span class="new">MỚI</span>
+                                            </div>
                                         </div>
                                         <div class="product-body">
-                                            <h3 style="height: 30px;" class="product-name"><a href="#">{{Name}}</a></h3>
+                                            <p class="product-category">{{CatName}}</p>
+                                            <h3 style="height: 30px" class="product-name">{{Name}}</h3>
                                             <h4 class="product-price">{{Price}} VNĐ</h4>
                                             <div>
                                                 <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
                                             </div>
                                         </div>
-                                        {{#if ../layoutAcc.isLogged}}
+                                        {{#if ../layoutVM.isLogged}}
                                         <div class="add-to-cart">
                                             <a data-proid="{{ID}}" href="javascript:;" class="addItem"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
                                         </div>
@@ -110,20 +114,22 @@
                         <div id="tab1" class="tab-pane active">
                             <div class="products-slick" data-nav="#slick-nav-2">
                                 <!-- product -->
-                                {{#each layoutPro.products}}
+                                {{#each productsQuantitySold}}
                                 <div class="col-md-3 col-xs-6">
                                     <div class="product">
-                                        <div style="height: 250px;" class="product-img">
+                                        <div style="height: 210px;" class="product-img">
                                             <img src="/imgs/{{ID}}/main.jpg" alt="">
                                         </div>
                                         <div class="product-body">
-                                            <h3 style="height: 30px;" class="product-name"><a href="#">{{Name}}</a></h3>
+                                            <p class="product-category">Số lượng bán: {{QuantitySold}}</p>
+                                            <p class="product-category">{{CatName}}</p>
+                                            <h3 style="height: 30px;" class="product-name">{{Name}}</h3>
                                             <h4 class="product-price">{{Price}} VNĐ</h4>
                                             <div>
                                                 <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
                                             </div>
                                         </div>
-                                        {{#if ../layoutAcc.isLogged}}
+                                        {{#if ../layoutVM.isLogged}}
                                         <div class="add-to-cart">
                                             <a data-proid="{{ID}}" href="javascript:;" class="addItem"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
                                         </div>
@@ -172,20 +178,22 @@
                         <div id="tab1" class="tab-pane active">
                             <div class="products-slick" data-nav="#slick-nav-3">
                                 <!-- product -->
-                                {{#each layoutPro.products}}
+                                {{#each productsViews}}
                                 <div class="col-md-3 col-xs-6">
                                     <div class="product">
-                                        <div style="height: 250px;" class="product-img">
+                                        <div style="height: 210px;" class="product-img">
                                             <img src="/imgs/{{ID}}/main.jpg" alt="">
                                         </div>
                                         <div class="product-body">
-                                            <h3 style="height: 30px;" class="product-name"><a href="#">{{Name}}</a></h3>
+                                            <p class="product-category">Số lượt xem: {{Views}}</p>
+                                            <p class="product-category">{{CatName}}</p>
+                                            <h3 style="height: 30px;" class="product-name">{{Name}}</h3>
                                             <h4 class="product-price">{{Price}} VNĐ</h4>
                                             <div>
                                                 <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
                                             </div>
                                         </div>
-                                        {{#if ../layoutAcc.isLogged}}
+                                        {{#if ../layoutVM.isLogged}}
                                         <div class="add-to-cart">
                                             <a data-proid="{{ID}}" href="javascript:;" class="addItem"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
                                         </div>

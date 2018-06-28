@@ -1,6 +1,8 @@
 var express = require('express'),
     accountRepos = require('../repos/accountRepos'),
-    sha256 = require('crypto-js/sha256');
+    sha256 = require('crypto-js/sha256'),
+    cartRepos = require('../repos/cartRepos'),
+    moment = require('moment');
 
 var restrict = require('../middle-wares/restrict');
 
@@ -145,5 +147,34 @@ router.post('/logout', restrict, (req, res) => {
 
     res.redirect(req.headers.referer);
 });
+
+router.get('/history/:accName', restrict, (req, res) => {
+    cartRepos.loadAll(req.params.accName).then(rows =>{
+        var pros = [];
+        for (var i = 0; i < rows.length; i++) {
+            pros.push({
+                checkoutDay: moment(rows[i].CheckoutDay, 'D/M/YYYY').format('DD-MM-YYYY HH:mm'),
+                product: rows[i],
+                amount: rows[i].Price * +rows[i].ProQuantity,
+            });
+        }
+
+        var vm = {
+            isHistory: true,
+            items: pros,
+        }
+        res.render('account/profile', vm);
+    })
+})
+
+router.get('/history/infor/:cartID', restrict, (req, res) => {
+    cartRepos.single(req.params.cartID).then(rows =>{
+        var vm = {
+            isInforHistory: true,
+            item: rows[0],
+        }
+        res.render('account/profile', vm);
+    })
+})
 
 module.exports = router;
