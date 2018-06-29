@@ -13,8 +13,8 @@
         - Nút đăng nhập -> trang đăng nhập
         - Nút đăng ký -> trang đăng kí
     * Đăng nhập:
-        - **Nhập tên email là "user" và đăng nhập** -> Trang dành cho người dùng (phân hệ người dùng)
-        - **Nhập tên email là "admin" và đăng nhập** -> Trang dành cho admin (phân hệ quản trị)
+        - **Nhập tên tài khoản đã đăng ký (ví dụ "user10") với mật khẩu và đăng nhập** -> Trang dành cho người dùng (phân hệ người dùng)
+        - **Nhập tên tài khoản là "admin" với mật khẩu và đăng nhập** -> Trang dành cho admin (phân hệ quản trị)
 2. Phân hệ người dùng:
     * Trang chủ: Đầy đủ các chức năng của phân hệ khách
         - Thêm mục chọn mua sản phẩm, hiện button "Thêm vào giỏ" khi di chuyển chuột đến sản phẩm.
