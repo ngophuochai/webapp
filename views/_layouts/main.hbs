@@ -42,8 +42,12 @@
 					<ul class="header-links pull-right">
 						{{#if layoutVM.isLogged}}
 						<form id="frmLogout" method="post" action="/home/account/logout"></form>
-						<li><a href="/home/account/profile"><i class="fa fa-user-o"></i>{{layoutVM.curUser.name}}</a></li>
-	                    <li><a id="lnkLogout" href="javascript:;"><i class="fa"></i>Đăng xuất</a></li>
+							{{#if layoutVM.isAdmin}}
+							<li><a href="/home/account/profile"><i class="fa fa-user-o"></i>{{layoutVM.curUser.name}} - Admin</a></li>
+							{{else}}
+							<li><a href="/home/account/profile"><i class="fa fa-user-o"></i>{{layoutVM.curUser.name}}</a></li>
+							{{/if}}
+						<li><a id="lnkLogout" href="javascript:;"><i class="fa"></i>Đăng xuất</a></li>
 						{{else}}
 						<li><a href="/home/account/register"><i class="fa fa-user-o"></i> Đăng ký</a></li>
 						<li><a href="/home/account/login"><i class="fa"></i> Đăng nhập</a></li>
@@ -51,8 +55,7 @@
 					</ul>
 				</div>
 			</div>
-			<!-- /TOP HEADER -->
-
+			<!-- /TOP HEADER -->	
 			<!-- MAIN HEADER -->
 			<div id="header">
 				<!-- container -->
@@ -68,34 +71,36 @@
 							</div>	
 						</div>
 						<!-- /LOGO -->
-
-						<!-- SEARCH BAR -->
-						<div class="col-md-6">
-							<div class="header-search">
-								<form action="/home/search" method="GET">
-									<input name="name" class="input" placeholder="Nhập tên xe">
-									<input hidden readonly name="category" class="input" value="%">
-									<input hidden readonly name="producer" class="input" value="%">
-									<button type="submit" class="search-btn">Tìm kiếm</button>
-								</form>
+						{{#if layoutVM.isAdmin}}
+						{{else}}
+							<!-- SEARCH BAR -->
+							<div class="col-md-6">
+								<div class="header-search">
+									<form action="/home/search" method="GET">
+										<input name="name" class="input" placeholder="Nhập tên xe">
+										<input hidden readonly name="category" class="input" value="%">
+										<input hidden readonly name="producer" class="input" value="%">
+										<button type="submit" class="search-btn">Tìm kiếm</button>
+									</form>
+								</div>
 							</div>
-						</div>
-						<!-- /SEARCH BAR -->
-						<!-- ACCOUNT -->
-						{{#if layoutVM.isLogged}}
-                        <div class="col-md-2 clearfix">
-                            <div class="header-ctn">
-                                <!-- Cart -->
-                                <div class="dropdown">
-                                    <a href="/home/cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        <span>Giỏ hàng</span>
-                                        <div class="qty">{{layoutVM.cartSummary}}</div>
-                                    </a>
-                                </div>
-                                <!-- /Cart -->
-                            </div>
-                        </div>
+							<!-- /SEARCH BAR -->
+							<!-- ACCOUNT -->
+							{{#if layoutVM.isLogged}}
+							<div class="col-md-2 clearfix">
+								<div class="header-ctn">
+									<!-- Cart -->
+									<div class="dropdown">
+										<a href="/home/cart">
+											<i class="fa fa-shopping-cart"></i>
+											<span>Giỏ hàng</span>
+											<div class="qty">{{layoutVM.cartSummary}}</div>
+										</a>
+									</div>
+									<!-- /Cart -->
+								</div>
+							</div>
+							{{/if}}
 						{{/if}}
                         <!-- /ACCOUNT -->
 					</div>
@@ -106,7 +111,25 @@
 			<!-- /MAIN HEADER -->
 		</header>
 		<!-- /HEADER -->
-
+		{{#if layoutVM.isAdmin}}
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li {{{_sections.navHomeActive}}}><a href="/home">Dashboard</a></li>
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		<!-- /NAVIGATION -->
+		{{else}}
 		<!-- NAVIGATION -->
 		<nav id="navigation">
 			<!-- container -->
@@ -146,6 +169,7 @@
 			<!-- /container -->
 		</nav>
 		<!-- /NAVIGATION -->
+		{{/if}}
 
 		<!-- BREADCRUMB -->
 		<div id="breadcrumb" class="section">

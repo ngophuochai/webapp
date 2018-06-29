@@ -1,222 +1,260 @@
-{{#section 'title'}}
-    Trang chủ
-{{/section}}
+{{#if layoutVM.isAdmin}}
+    {{#section 'title'}}
+        Dashboard
+    {{/section}}
 
-{{#section 'breadcrumbRe'}}
-    <li><a href="/home">Trang chủ</a>
-{{/section}}
+    {{#section 'breadcrumbRe'}}
+        <li><a href="/home">Dashboard</a>
+    {{/section}}
 
-{{#section 'navHomeActive'}}
-    class = "active"
-{{/section}}
-
-{{#section 'js'}}
-<script type="text/javascript">
-	$('.addItem').on('click', function() {
-	    var id = $(this).data('proid');
-	    $('#txtP').val(id);
-	    $('#txtQ').val(1);
-	    $('#frmAddItem').submit();
-	});
-</script>
-{{/section}}
-
-<!-- SECTION -->
-<div class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <form id="frmAddItem" method="post" action="/home/cart/add">
-                <input type="hidden" name="proID" id="txtP">
-                <input type="hidden" name="quantity" id="txtQ">
-            </form>
-            <!-- section title -->
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h3 class="title">Sản phẩm mới</h3>
+    {{#section 'navHomeActive'}}
+        class = "active"
+    {{/section}}
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Dashboard</h3>
+                    </div>
                 </div>
-            </div>
-            <!-- /section title -->
-
-            <!-- Products tab & slick -->
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="products-tabs">
-                        <!-- tab -->
-                        <div id="tab1" class="tab-pane active">
-                            <div class="products-slick" data-nav="#slick-nav-1">
-                                <!-- product -->
-                                {{#each productsDay}}
-                                <div class="col-md-3 col-xs-6">
-                                    <div class="product">
-                                        <div style="height: 210px;" class="product-img">
-                                            <img src="/imgs/{{ID}}/main.jpg" alt="">
-                                            <div class="product-label">
-                                                <span class="new">MỚI</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-body">
-                                            <p class="product-category">{{CatName}}</p>
-                                            <h3 style="height: 30px" class="product-name">{{Name}}</h3>
-                                            <h4 class="product-price">{{Price}} VNĐ</h4>
-                                            <div>
-                                                <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
-                                            </div>
-                                        </div>
-                                        {{#if ../layoutVM.isLogged}}
-                                        <div class="add-to-cart">
-                                            <a data-proid="{{ID}}" href="javascript:;" class="addItem"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
-                                        </div>
-                                        {{else}}
-                                        <div class="add-to-cart">
-                                            <a href="/home/account/login"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
-                                        </div>
-                                        {{/if}}
-                                    </div>
-                                </div>
-                                {{/each}}
-                                <!-- /product -->
-                            </div>
-                            <div id="slick-nav-1" class="products-slick-nav"></div>
-                        </div>
-                        <!-- /tab -->
+                <div class="col-md-6">
+                    <div class="list-group">
+                        <a href="/home/product/manage" class="list-group-item">Quản lý sản phẩm</a>
+                        <a href="/home/product/manage/category" class="list-group-item">Quản lý loại sản phẩm</a>
+                        <a href="/home/product/manage/producer" class="list-group-item">Quản lý nhà sản xuất</a>
+                        <a href="/home/product/manage/cart" class="list-group-item">Quản lý đơn hàng</a>
                     </div>
                 </div>
             </div>
-            <!-- Products tab & slick -->   
+            <!-- /row -->
         </div>
-        <!-- /row -->
+        <!-- /container -->
     </div>
-    <!-- /container -->
-</div>
-<!-- /SECTION -->
+    <!-- /SECTION -->
+{{else}}
+    {{#section 'title'}}
+        Trang chủ
+    {{/section}}
 
-<!-- SECTION -->
-<div class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <!-- section title -->
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h3 class="title">Sản phẩm bán chạy nhất</h3>
-                </div>
-            </div>
-            <!-- /section title -->
+    {{#section 'breadcrumbRe'}}
+        <li><a href="/home">Trang chủ</a>
+    {{/section}}
 
-            <!-- Products tab & slick -->
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="products-tabs">
-                        <!-- tab -->
-                        <div id="tab1" class="tab-pane active">
-                            <div class="products-slick" data-nav="#slick-nav-2">
-                                <!-- product -->
-                                {{#each productsQuantitySold}}
-                                <div class="col-md-3 col-xs-6">
-                                    <div class="product">
-                                        <div style="height: 210px;" class="product-img">
-                                            <img src="/imgs/{{ID}}/main.jpg" alt="">
-                                        </div>
-                                        <div class="product-body">
-                                            <p class="product-category">Số lượng bán: {{QuantitySold}}</p>
-                                            <p class="product-category">{{CatName}}</p>
-                                            <h3 style="height: 30px;" class="product-name">{{Name}}</h3>
-                                            <h4 class="product-price">{{Price}} VNĐ</h4>
-                                            <div>
-                                                <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
-                                            </div>
-                                        </div>
-                                        {{#if ../layoutVM.isLogged}}
-                                        <div class="add-to-cart">
-                                            <a data-proid="{{ID}}" href="javascript:;" class="addItem"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
-                                        </div>
-                                        {{else}}
-                                        <div class="add-to-cart">
-                                            <a href="/home/account/login"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
-                                        </div>
-                                        {{/if}}
-                                    </div>
-                                </div>
-                                {{/each}}
-                                <!-- /product -->
-                            </div>
-                            <div id="slick-nav-2" class="products-slick-nav"></div>
-                        </div>
-                        <!-- /tab -->
+    {{#section 'navHomeActive'}}
+        class = "active"
+    {{/section}}
+
+    {{#section 'js'}}
+    <script type="text/javascript">
+        $('.addItem').on('click', function() {
+            var id = $(this).data('proid');
+            $('#txtP').val(id);
+            $('#txtQ').val(1);
+            $('#frmAddItem').submit();
+        });
+    </script>
+    {{/section}}
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <form id="frmAddItem" method="post" action="/home/cart/add">
+                    <input type="hidden" name="proID" id="txtP">
+                    <input type="hidden" name="quantity" id="txtQ">
+                </form>
+                <!-- section title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Sản phẩm mới</h3>
                     </div>
                 </div>
-            </div>
-            <!-- Products tab & slick -->   
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /SECTION -->
+                <!-- /section title -->
 
-<!-- SECTION -->
-<div class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <!-- section title -->
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h3 class="title">Sản phẩm được xem nhiều nhất</h3>
-                </div>
-            </div>
-            <!-- /section title -->
-            <!-- Products tab & slick -->
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="products-tabs">
-                        <!-- tab -->
-                        <div id="tab1" class="tab-pane active">
-                            <div class="products-slick" data-nav="#slick-nav-3">
-                                <!-- product -->
-                                {{#each productsViews}}
-                                <div class="col-md-3 col-xs-6">
-                                    <div class="product">
-                                        <div style="height: 210px;" class="product-img">
-                                            <img src="/imgs/{{ID}}/main.jpg" alt="">
-                                        </div>
-                                        <div class="product-body">
-                                            <p class="product-category">Số lượt xem: {{Views}}</p>
-                                            <p class="product-category">{{CatName}}</p>
-                                            <h3 style="height: 30px;" class="product-name">{{Name}}</h3>
-                                            <h4 class="product-price">{{Price}} VNĐ</h4>
-                                            <div>
-                                                <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
+                <!-- Products tab & slick -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="products-tabs">
+                            <!-- tab -->
+                            <div id="tab1" class="tab-pane active">
+                                <div class="products-slick" data-nav="#slick-nav-1">
+                                    <!-- product -->
+                                    {{#each productsDay}}
+                                    <div class="col-md-3 col-xs-6">
+                                        <div class="product">
+                                            <div style="height: 210px;" class="product-img">
+                                                <img src="/imgs/{{ID}}/main.jpg" alt="">
+                                                <div class="product-label">
+                                                    <span class="new">MỚI</span>
+                                                </div>
                                             </div>
+                                            <div class="product-body">
+                                                <p class="product-category">{{CatName}}</p>
+                                                <h3 style="height: 30px" class="product-name">{{Name}}</h3>
+                                                <h4 class="product-price">{{Price}} VNĐ</h4>
+                                                <div>
+                                                    <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
+                                                </div>
+                                            </div>
+                                            {{#if ../layoutVM.isLogged}}
+                                            <div class="add-to-cart">
+                                                <a data-proid="{{ID}}" href="javascript:;" class="addItem"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
+                                            </div>
+                                            {{else}}
+                                            <div class="add-to-cart">
+                                                <a href="/home/account/login"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
+                                            </div>
+                                            {{/if}}
                                         </div>
-                                        {{#if ../layoutVM.isLogged}}
-                                        <div class="add-to-cart">
-                                            <a data-proid="{{ID}}" href="javascript:;" class="addItem"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
-                                        </div>
-                                        {{else}}
-                                        <div class="add-to-cart">
-                                            <a href="/home/account/login"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
-                                        </div>
-                                        {{/if}}
                                     </div>
+                                    {{/each}}
+                                    <!-- /product -->
                                 </div>
-                                {{/each}}
-                                <!-- /product -->
+                                <div id="slick-nav-1" class="products-slick-nav"></div>
                             </div>
-                            <div id="slick-nav-3" class="products-slick-nav"></div>
+                            <!-- /tab -->
                         </div>
-                        <!-- /tab -->
                     </div>
                 </div>
+                <!-- Products tab & slick -->   
             </div>
-            <!-- Products tab & slick -->   
+            <!-- /row -->
         </div>
-        <!-- /row -->
+        <!-- /container -->
     </div>
-    <!-- /container -->
-</div>
-<!-- /SECTION -->
+    <!-- /SECTION -->
+
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- section title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Sản phẩm bán chạy nhất</h3>
+                    </div>
+                </div>
+                <!-- /section title -->
+
+                <!-- Products tab & slick -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="products-tabs">
+                            <!-- tab -->
+                            <div id="tab1" class="tab-pane active">
+                                <div class="products-slick" data-nav="#slick-nav-2">
+                                    <!-- product -->
+                                    {{#each productsQuantitySold}}
+                                    <div class="col-md-3 col-xs-6">
+                                        <div class="product">
+                                            <div style="height: 210px;" class="product-img">
+                                                <img src="/imgs/{{ID}}/main.jpg" alt="">
+                                            </div>
+                                            <div class="product-body">
+                                                <p class="product-category">Số lượng bán: {{QuantitySold}}</p>
+                                                <p class="product-category">{{CatName}}</p>
+                                                <h3 style="height: 30px;" class="product-name">{{Name}}</h3>
+                                                <h4 class="product-price">{{Price}} VNĐ</h4>
+                                                <div>
+                                                    <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
+                                                </div>
+                                            </div>
+                                            {{#if ../layoutVM.isLogged}}
+                                            <div class="add-to-cart">
+                                                <a data-proid="{{ID}}" href="javascript:;" class="addItem"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
+                                            </div>
+                                            {{else}}
+                                            <div class="add-to-cart">
+                                                <a href="/home/account/login"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
+                                            </div>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                    <!-- /product -->
+                                </div>
+                                <div id="slick-nav-2" class="products-slick-nav"></div>
+                            </div>
+                            <!-- /tab -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Products tab & slick -->   
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- section title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Sản phẩm được xem nhiều nhất</h3>
+                    </div>
+                </div>
+                <!-- /section title -->
+                <!-- Products tab & slick -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="products-tabs">
+                            <!-- tab -->
+                            <div id="tab1" class="tab-pane active">
+                                <div class="products-slick" data-nav="#slick-nav-3">
+                                    <!-- product -->
+                                    {{#each productsViews}}
+                                    <div class="col-md-3 col-xs-6">
+                                        <div class="product">
+                                            <div style="height: 210px;" class="product-img">
+                                                <img src="/imgs/{{ID}}/main.jpg" alt="">
+                                            </div>
+                                            <div class="product-body">
+                                                <p class="product-category">Số lượt xem: {{Views}}</p>
+                                                <p class="product-category">{{CatName}}</p>
+                                                <h3 style="height: 30px;" class="product-name">{{Name}}</h3>
+                                                <h4 class="product-price">{{Price}} VNĐ</h4>
+                                                <div>
+                                                    <a href="/home/product/detail/{{ID}}" class="btn btn-info" role="button">Xem chi tiết</a>
+                                                </div>
+                                            </div>
+                                            {{#if ../layoutVM.isLogged}}
+                                            <div class="add-to-cart">
+                                                <a data-proid="{{ID}}" href="javascript:;" class="addItem"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
+                                            </div>
+                                            {{else}}
+                                            <div class="add-to-cart">
+                                                <a href="/home/account/login"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button></a>
+                                            </div>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                    <!-- /product -->
+                                </div>
+                                <div id="slick-nav-3" class="products-slick-nav"></div>
+                            </div>
+                            <!-- /tab -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Products tab & slick -->   
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+{{/if}}

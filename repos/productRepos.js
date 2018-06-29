@@ -41,8 +41,13 @@ exports.countPer = (perID) => {
 }
 
 exports.single = id => {
-    var sql = `select t.*, c.Name CatName, p.Name PerName from products t, category c, producer p where t.Category = c.ID and t.Producer = p.ID and t.ID = ${id}`;
+    var sql = `select t.*, c.Name CatName, p.Name PerName from products t, category c, producer p where t.Category = c.ID and t.Producer = p.ID and t.ID = '${id}'`;
     return db.load(sql);
+}
+
+exports.update = (id, quantity) => {
+    var sql = `update products set Quantity = Quantity-${quantity}, QuantitySold = QuantitySold+${quantity} where ID = '${id}'`;
+    return db.save(sql);
 }
 
 exports.countSearch = pro => {

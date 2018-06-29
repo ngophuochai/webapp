@@ -114,74 +114,59 @@
                 <tbody>
                 {{#each items}}
                 <tr>
-                    <td>{{product.ID}}</td>
+                    <td>{{product.CartID}}</td>
                     <td>{{product.Name}}</td>
                     <td>{{product.ProQuantity}}</td>
                     <td>{{amount}}</td>
                     <td><b style="color: green">{{product.Status}}</b></td>
                     <td>{{checkoutDay}}</td>
-                    <td> <a href="/account/history/infor/{{product.ID}}" class="btn btn-success">Chi tiết</a></td>
+                    <td> <a href="/home/account/history/infor/{{product.CartID}}" class="btn btn-success">Chi tiết</a></td>
                 </tr>
                 {{/each}}
             </table>
             {{/if}}
             {{#if isInforHistory}}
-            <div class="billing-details">
-                <div class="section-title">
-                    <h3 class="title">Thông tin đơn hàng</h3>
-                </div>
-                <table class="table">
-                        <thead>
-                        <tr>
-                            <th class="col-md-2">Mã đơn hàng</th>
-                            <th class="col-md-1">Hình ảnh</th>
-                            <th class="col-md-2">Tên xe</th>
-                            <th class="col-md-1">Số lượng</th>
-                            <th class="col-md-1">Tình trạng</th>
-                            <th class="col-md-1">Tổng tiền</th>
-                            <th class="col-md-2">Ngày tạo</th>
-                            <th class="col-md-2">Phí giao hàng</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {{#with item}}
-                        <tr>
-                            <td>MA1512</td>
-                            <td>
-                                <div class="product-img">
-                                    <img style="width: 100px;" src="../img/Hyundai Elantra GLS.jpg" alt="">
-                                </div>
-                            </td>
-                            <td>Hyundai Elantra GLS</td>
-                            <td>1</td>
-                            <td>Đã giao</td>
-                            <td>$980.00</td>
-                            <td>26/04/2018</td>
-                            <td>Miễn phí</td>
-                        </tr>
-                        {{/with}}
-                    </tbody>
-                </table>
-
-                <div class="col-md-7">
-                    <div class="form-group">
-                        <label>Địa chỉ giao hàng:</label>
-                        <input class="input" type="text" value="231a/13 Dương Bá Trạc" readonly>
+                {{#with items}}
+                <div class="billing-details">
+                    <div class="section-title">
+                        <h3 class="title">Thông tin đơn hàng</h3>
                     </div>
-                    <div class="form-group">
-                        <label>Tỉnh/ Thành phố:</label>
-                        <input class="input" type="text" value="TP Hồ Chí Minh" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Quận/ Huyện:</label>
-                        <input class="input" type="text" value="Quận 8" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Phường/ Xã:</label>
-                        <input class="input" type="text" value="Phường 1" readonly>
+                    <table class="table">
+                            <thead>
+                            <tr>
+                                <th class="col-md-1">Mã ĐH</th>
+                                <th class="col-md-1">Hình ảnh</th>
+                                <th class="col-md-3">Tên xe</th>
+                                <th class="col-md-1">Số lượng</th>
+                                <th class="col-md-1">Tình trạng</th>
+                                <th class="col-md-1">Tổng tiền</th>
+                                <th class="col-md-2">Ngày tạo</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{product.CartID}}</td>
+                                <td>
+                                    <div class="product-img">
+                                        <img style="width: 100px;" src="/imgs/{{product.ProID}}/main.jpg" alt="">
+                                    </div>
+                                </td>
+                                <td>{{product.Name}}</td>
+                                <td>{{product.ProQuantity}}</td>
+                                <td><b style="color: green">{{product.Status}}</b></td>
+                                <td>{{amount}}</td>
+                                <td>{{checkoutDay}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <label>Địa chỉ giao hàng: </label>
+                        </div>
+                        <p>{{product.Address}}</p>
                     </div>
                 </div>
-            </div>
+                {{/with}}
             {{/if}}
         </div>
         <!-- /row -->

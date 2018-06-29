@@ -48,17 +48,22 @@ exports.remove = (cart, item) => {
     return
 }
 
-exports.loadAll = (username) => {
-    var sql = `select * from cart c, products p where c.ProID = p.ID and c.username = '${username}' order by CheckoutDay DESC`;
+exports.loadAllN = () => {
+    var sql = `select *, c.ID as CartID from cart c, products p where c.ProID = p.ID order by CheckoutDay DESC`;
     return db.load(sql);
 }
 
-exports.checkout = (username, cItems, address, i) => {
-    var sql = `insert into cart(username, ProID, ProQuantity, Address, CheckoutDay, Status) values('${username}', '${cItems[i].ProID}', '${cItems[i].ProQuantity}', '${address}', current_time, 'Đã giao')`;
+exports.loadAll = (username) => {
+    var sql = `select *, c.ID as CartID from cart c, products p where c.ProID = p.ID and c.username = '${username}' order by CheckoutDay DESC`;
+    return db.load(sql);
+}
+
+exports.checkout = (cItems, i) => {
+    sql = `insert into cart(username, ProID, ProQuantity, Address, CheckoutDay, Status) values('${cItems[i].username}', '${cItems[i].ProID}', '${cItems[i].ProQuantity}', '${cItems[i].address}', current_time, 'Đã giao')`;
     return db.save(sql);
 }
 
 exports.single = (id) => {
-    var sql = `select * from cart c, products p where c.ProID = p.ID and c.ID = '${id}'`;
+    var sql = `select *, c.ID as CartID from cart c, products p where c.ProID = p.ID and c.ID = '${id}'`;
     return db.load(sql);
 }

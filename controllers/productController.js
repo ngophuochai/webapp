@@ -1,7 +1,11 @@
 var express = require('express'),
     productRepos = require('../repos/productRepos'),
     categoryRepos = require('../repos/categoryRepos'),
-    producerRepos = require('../repos/producerRepos');
+    producerRepos = require('../repos/producerRepos'),
+    cartRepos = require('../repos/cartRepos'),
+    moment = require('moment');
+
+var restrict = require('../middle-wares/restrict');
 
 var router = express.Router();
 
@@ -123,5 +127,52 @@ router.get('/producer/:perID', (req, res) => {
     })
 })
 
+router.get('/manage', restrict, (req, res) => {
+    productRepos.loadAll().then(rows =>{
+        var vm = {
+            isProduct: true,
+            products: rows,
+        }
+        res.render('product/manage', vm);
+    })
+})
+
+router.get('/manage/category', restrict, (req, res) => {
+    categoryRepos.loadAll().then(rows =>{
+        var vm = {
+            isCategory: true,
+            categories: rows,
+        }
+        res.render('product/manage', vm);
+    })
+})
+
+router.get('/manage/producer', restrict, (req, res) => {
+    producerRepos.loadAll().then(rows =>{
+        var vm = {
+            isProducer: true,
+            producers: rows,
+        }
+        res.render('product/manage', vm);
+    })
+})
+
+router.get('/manage/cart', restrict, (req, res) => {
+    cartRepos.loadAllN().then(rows =>{
+        var cPros = [];
+        for (var i = 0; i < rows.length; i++) {
+            cPros.push({
+                cart: rows[i],
+                amount: rows[i].Price * +rows[i].ProQuantity,
+                checkoutDay: moment(rows[i].CheckoutDay, 'D/M/YYYY').format('DD-MM-YYYY HH:mm'),
+            })
+        }
+        var vm = {
+            isCart: true,
+            carts: cPros,
+        }
+        res.render('product/manage', vm);
+    })
+})
 
 module.exports = router;

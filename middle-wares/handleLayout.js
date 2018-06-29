@@ -17,6 +17,7 @@ module.exports = (req, res, next) => {
             categories: rows1,
             producers: rows2,
             isLogged: req.session.isLogged,
+            isAdmin: req.session.isAdmin,
             curUser: req.session.curUser,
             cartSummary: +cartRepos.getNumberOfItems(req.session.cart),
         }

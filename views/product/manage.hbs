@@ -1,0 +1,234 @@
+{{#if isProduct}}
+    {{#section 'title'}}
+        Quản lý sản phẩm
+    {{/section}}
+
+    {{#section 'breadcrumbRe'}}
+        <li><a href="/home">Dashboard</a>
+        <li><a href="javascript:;">Quản lý sản phẩm</a>
+    {{/section}}
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Quản lý sản phẩm</h3>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-8">
+                    <div class="header-search">
+                        <form action="javascript:;" method="GET">   
+                            <input class="input" placeholder="Nhập từ khóa">
+                            <input type="submit" class="search-btn" value="Tìm kiếm" >
+                        </form>
+                    </div>
+                </div>
+                <a href="javascript:;" class="btn btn-success">Thêm sản phẩm</a>
+                <br><br>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="col-md-2">Mã sản phẩm</th>
+                        <th class="col-md-1">Hình ảnh</th>
+                        <th class="col-md-3">Tên sản phẩm</th>
+                        <th class="col-md-2">Số lượng tồn</th>
+                        <th class="col-md-2">Đơn giá</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each products}}
+                    <tr>
+                        <td>{{ID}}</td>
+                        <td>
+                            <div class="product-img">
+                                <img style="width: 50px;" src="/imgs/{{ID}}/main.jpg" alt="">
+                            </div>
+                        </td>
+                        <td>{{Name}}</td>
+                        <td>{{Quantity}}</td>
+                        <td>{{Price}}</td>
+                        <td> 
+                            <a href="javascript:;" class="btn btn-primary">Sửa</a>
+                            <a href="javascript:;" class="btn btn-danger">Xóa</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+{{/if}}
+{{#if isCategory}}
+    {{#section 'title'}}
+        Quản lý kiểu xe
+    {{/section}}
+
+    {{#section 'breadcrumbRe'}}
+        <li><a href="/home">Dashboard</a>
+        <li><a href="javascript:;">Quản lý kiểu xe</a>
+    {{/section}}
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Quản lý loại sản phẩm</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-6 header-search">
+                    <form action="/admin/manageProduct" method="GET">
+                        <input class="input" placeholder="Nhập tên loại">
+                        <a href="javascript:;" class="btn btn-success">Thêm loại sản phẩm</a>
+                    </form>
+                </div>
+                <br><br>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="col-md-3">Loại sản phẩm</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each categories}}
+                    <tr>
+                        <td><input class="input" type="text" value="{{Name}}"></td>
+                        <td><a href="javascript:;" class="btn btn-danger">Xóa</a></td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+                <a href="javascript:;" class="btn btn-success">Cập nhật</a>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+{{/if}}
+{{#if isProducer}}
+    {{#section 'title'}}
+        Quản lý hãng xe
+    {{/section}}
+
+    {{#section 'breadcrumbRe'}}
+        <li><a href="/home">Dashboard</a>
+        <li><a href="javascript:;">Quản lý hãng xe</a>
+    {{/section}}
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Quản lý nhà sản xuất</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-6 header-search">
+                    <form action="/admin/manageProduct" method="GET">
+                        <input class="input" placeholder="Nhập tên nhà sản xuất">
+                        <a href="javascript:;" class="btn btn-success">Thêm nhà sản xuất</a>
+                    </form>
+                </div>
+                <br><br>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="col-md-3">Nhà sản xuất</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each producers}}
+                    <tr>
+                        <td><input class="input" type="text" value="{{Name}}"></td>
+                        <td><a href="javascript:;" class="btn btn-danger">Xóa</a></td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+                <a href="javascript:;" class="btn btn-success">Cập nhật</a>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+{{/if}}
+{{#if isCart}}
+    {{#section 'title'}}
+        Quản lý đơn hàng
+    {{/section}}
+
+    {{#section 'breadcrumbRe'}}
+        <li><a href="/home">Dashboard</a>
+        <li><a href="javascript:;">Quản lý đơn hàng</a>
+    {{/section}}
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Quản lý đơn hàng</h3>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="col-md-1">Mã ĐH</th>
+                        <th class="col-md-1">Tên KH</th>
+                        <th class="col-md-3">Tên xe</th>
+                        <th class="col-md-1">Số lượng</th>
+                        <th class="col-md-3">Tình trạng</th>
+                        <th class="col-md-1">Tổng tiền</th>
+                        <th class="col-md-2">Ngày tạo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each carts}}
+                    <tr>
+                        <td>{{cart.CartID}}</td>
+                        <td>{{cart.username}}</td>
+                        <td>{{cart.Name}}</td>
+                        <td>{{cart.ProQuantity}}</td>
+                        <td>
+                            <div class="row">
+                                <select style="font-weight: bold; color:green " class="col-md-6 input-select">
+                                    <option style="font-weight: bold; color: green" value="0">Đã giao</option>
+                                    <option style="font-weight: bold; color: blueviolet" value="1">Đang giao</option>
+                                    <option style="font-weight: bold; color: red" value="1">Chưa giao</option>
+                                </select>
+                                <div class="col-md-6">
+                                    <a href="javascript:;" class="btn btn-success"><span class="fa fa-refresh"></span></a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{amount}}</td>
+                        <td>{{checkoutDay}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+{{/if}}

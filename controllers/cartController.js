@@ -56,29 +56,26 @@ router.get('/checkout', (req, res) => {
     res.render('cart/checkout', vm);
 })
 
-router.post('/checkout', (req, res) => {    
-    var username = req.body.username;
-    var address = req.body.address + req.body.addressCity + req.body.addressCountry + req.body.addressCommune;
+router.post('/checkout', (req, res) => {
     var pros = req.body.products;
     var products = pros.split("//");
     var cItems = [];
 
     for (var i = 0; i < products.length; i = i + 2) {
         cItems.push({
-            ProID: products[i],
+            username: req.body.username,
+            address: req.body.address + ", " + req.body.addressCity + ", " + req.body.addressCountry + ", " + req.body.addressCommune,
+            ProID: +products[i],
             ProQuantity: +products[i + 1],
         });
     }
-
+    
     for (var i = 0; i < cItems.length - 1; i++) {
-        cartRepos.checkout(username, cItems, address, i);
+        productRepos.update(cItems[i].ProID, cItems[i].ProQuantity);
+        cartRepos.checkout(cItems, i);
     }
     req.session.cart = [];
-
-    var vm = {
-        isSuccess: true,
-    }
-    res.render('cart/checkout', vm);
+    res.redirect(req.headers.referer);
 })
 
 router.post('/remove', (req, res) => {

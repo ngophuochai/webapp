@@ -20,6 +20,8 @@ router.post('/login', (req, res) => {
     accountRepos.login(acc).then(rows => {
         if (rows.length > 0) {
             req.session.isLogged = true;
+            if (acc.username === 'admin')
+                req.session.isAdmin = true;
             req.session.curUser = rows[0];
             req.session.cart = [];
 
@@ -142,6 +144,7 @@ router.post('/profile/password', restrict, (req, res) => {
 
 router.post('/logout', restrict, (req, res) => {
     req.session.isLogged = false;
+    req.session.isAdmin = false;
     req.session.curUser = null;
     req.session.cart = [];
 
@@ -169,9 +172,15 @@ router.get('/history/:accName', restrict, (req, res) => {
 
 router.get('/history/infor/:cartID', restrict, (req, res) => {
     cartRepos.single(req.params.cartID).then(rows =>{
+        var pros = {
+            checkoutDay: moment(rows[0].CheckoutDay, 'D/M/YYYY').format('DD-MM-YYYY HH:mm'),
+            product: rows[0],
+            amount: rows[0].Price * +rows[0].ProQuantity,
+        }
+        
         var vm = {
             isInforHistory: true,
-            item: rows[0],
+            items: pros,
         }
         res.render('account/profile', vm);
     })
